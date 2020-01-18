@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+        <!DOCTYPE configuration
+                PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+                "http://mybatis.org/dtd/mybatis-3-config.dtd">
+<configuration>
+<!-- 配置数据库
+    <properties resource="db.properties" />
+    -->
+<!--    配置日志-->
+    <settings>
+<!--       配置属性和字段驼峰命名和下划线命名不互相转换-->
+<!--        <setting name="mapUnderscoreToCamelCase" value="false"/>-->
+<!--        配置日志-->
+        <setting name="logImpl" value="LOG4J"/>
+    </settings>
+</configuration>

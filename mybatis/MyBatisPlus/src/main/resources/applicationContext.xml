@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:tx="http://www.springframework.org/schema/tx"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/context https://www.springframework.org/schema/context/spring-context.xsd http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx.xsd">
+
+    <!-- 配置数据源 c3p0-->
+    <context:property-placeholder location="classpath:db.properties"/>
+    <bean id="dataSource" class="com.mchange.v2.c3p0.ComboPooledDataSource">
+        <property name="driverClass" value="${jdbc.driver}"></property>
+        <property name="jdbcUrl" value="${jdbc.url}"></property>
+        <property name="user" value="${jdbc.username}"></property>
+        <property name="password" value="${jdbc.password}"></property>
+    </bean>
+    <!--事务管理器-->
+    <bean id="dataSourcesTransactionManger" class="org.springframework.jdbc.datasource.DataSourceTransactionManager">
+        <property name="dataSource" ref="dataSource"></property>
+    </bean>
+    <tx:annotation-driven transaction-manager="dataSourcesTransactionManger"></tx:annotation-driven>
+
+    <!--SqlSessionFactoryBean: MyBatis-->
+    <!--<bean id="sqlSessionFactoryBean" class="org.mybatis.spring.SqlSessionFactoryBean">-->
+    <bean id="sqlSessionFactoryBean" class="com.baomidou.mybatisplus.extension.spring.MybatisSqlSessionFactoryBean">
+
+        <property name="dataSource" ref="dataSource"></property>
+        <!--    mybatis 配置文件-->
+        <property name="configLocation" value="classpath:mybatis.xml"></property>
+        <!--    配置别名扫描包    -->
+        <property name="typeAliasesPackage" value="com.lx.entity"></property>
+
+        <!--    拦截器  分页-->
+        <property name="plugins">
+            <list>
+                <!--            分页插件          攻击 SQL 阻断解析器   性能优化
+                <bean class="com.baomidou.mybatisplus.extension.plugins.PaginationInterceptor">
+                             配置   攻击 SQL 阻断解析器   性能优化
+                    <property name="sqlParserList">
+                        <list>
+                            <bean class="com.baomidou.mybatisplus.extension.parsers.BlockAttackSqlParser"></bean>
+
+                        </list>
+                    </property>
+                </bean>-->
+                <!--性能分析插件-->
+                <!-- SQL 执行性能分析，开发环境使用，线上不推荐。 maxTime 指的是 sql 最大执行时长 -->
+                <bean class="com.baomidou.mybatisplus.extension.plugins.PerformanceInterceptor">
+                    <property name="maxTime" value="100"/>
+                    <!--SQL是否格式化 默认false   格式化sql语句-->
+                    <property name="format" value="true"/>
+
+
+                </bean>
+                <!--                乐观锁配置-->
+                <bean class="com.baomidou.mybatisplus.extension.plugins.OptimisticLockerInterceptor"/>
+
+            </list>
+        </property>
+        <property name="globalConfig" ref="globalConfig">
+
+
+        </property>
+
+
+    </bean>
+    <!--    告知程序使用自己定义的注入器-->
+    <!--    全局配置-->
+    <bean id="globalConfig" class="com.baomidou.mybatisplus.core.config.GlobalConfig">
+        <!--自动填充     将填充器放入配置-->
+        <property name="metaObjectHandler" ref="myMetaObjectHandler">
+
+
+        </property>
+
+
+        <!--        注入器-->
+        <property name="sqlInjector">
+            <bean class="com.lx.injector.MyInjector">
+            </bean>
+        </property>
+        <!--        逻辑删除-->
+        <property name="dbConfig">
+            <bean class="com.baomidou.mybatisplus.core.config.GlobalConfig$DbConfig">
+                <property name="logicDeleteValue" value="1"></property>
+                <property name="logicNotDeleteValue" value="0"></property>
+                <!--
+                表名前缀
+                <property name="tablePrefix" value=""></property>-->
+
+            </bean>
+        </property>
+
+    </bean>
+
+    <!--MyBatis 只写接口不写实现类 ，  接口所在包-->
+    <bean class="org.mybatis.spring.mapper.MapperScannerConfigurer">
+        <property name="basePackage" value="com.lx.mapper"></property>
+    </bean>
+    <!--将自动填充功能的类纳入ioc容器中-->
+    <bean id="myMetaObjectHandler" class="com.lx.meta.MyMetaObjectHandler"></bean>
+</beans>

@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.lx.mapper.Student1Mapper">
+  <resultMap id="BaseResultMap" type="com.lx.entity.Student1">
+    <!--
+      WARNING - @mbg.generated
+    -->
+    <id column="stu_no" jdbcType="INTEGER" property="stuNo" />
+    <result column="stu_name" jdbcType="VARCHAR" property="stuName" />
+    <result column="stu_age" jdbcType="INTEGER" property="stuAge" />
+  </resultMap>
+</mapper>
