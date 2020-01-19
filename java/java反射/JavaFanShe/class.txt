@@ -1,0 +1,2 @@
+className=com.lx.myclass.Person
+methodName = staticMethod
