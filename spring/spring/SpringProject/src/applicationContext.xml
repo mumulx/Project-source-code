@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:p="http://www.springframework.org/schema/p"
+       xmlns:context="http://www.springframework.org/schema/context"
+
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+      http://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd">
+    <!-- 框架在生成对象时，需要使用无参构造-->
+    <!--控制反转IoC、 依赖注入DI-->
+    <!--<bean id="student" class="com.yanqun.entity.Student" p:stuNo="100" p:stuName="xx" p:stuAge="33" >-->
+    <bean id="student" class="com.yanqun.entity.Student" scope="singleton" init-method="myInit"  destroy-method="myDestroy" >
+         <!--value:简单类型-->
+        <property name="stuNo" value="1"></property>
+        <property name="stuName" value="张三"></property>
+        <property name="stuAge" value="23"></property>
+         <!--ref:其他类型-->
+        <!--<property name="address" ref="myaddress"></property>-->
+
+        <!-- 构造方法-
+        <constructor-arg value="aa" name="stuName" ></constructor-arg>
+        <constructor-arg value="1" name="stuNo" ></constructor-arg>
+        <constructor-arg value="33" name="stuAge"></constructor-arg>
+        -->
+    </bean>
+
+    <!--<bean id="myaddress" class="com.yanqun.entity.Address">-->
+        <!--<property name="homeAddrss" value="xa"></property>-->
+        <!--<property name="schoolAddrss" value="bj"></property>-->
+    <!--</bean>-->
+
+<!--@ComponentScan(value="com.yanqun",excludeFilters = {  @ComponentScan.Filter(type= FilterType.ASSIGNABLE_TYPE,classes ={StudentDao.class} )}  )-->
+
+    <context:component-scan base-package="com.yanqun" >
+            <context:exclude-filter type="annotation" expression="org.springframework.stereotype.Repository"  />
+    </context:component-scan>
+
+</beans>

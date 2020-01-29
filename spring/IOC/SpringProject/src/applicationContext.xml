@@ -1,0 +1,179 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:p="http://www.springframework.org/schema/p"
+	default-autowire="byName"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.3.xsd">
+	
+	<!-- 配置扫描器 -->
+	<context:component-scan base-package="org.lanqiao.dao">
+	</context:component-scan>
+
+	<!-- 该文件中产生的所有对象，被spring放入了一个  称之为spring ioc容器的地方 -->
+	<!-- id:唯一标识符    class：指定类型   -->
+	<bean id="student" class="org.lanqiao.entity.Student">
+		<!-- property:该class所代表的类的属性
+			name:属性名
+			value:属性值
+		
+		<property name="stuNo" value="2"></property>
+		<property name="stuName" value="ls"></property>
+		<property name="stuAge" value="24"></property>
+		 -->
+	</bean>
+	
+	<bean id="javaCourse" class="org.lanqiao.newinstance.JavaCourse">
+	</bean>
+	<!-- 
+	<bean id="studengDao" class="org.lanqiao.dao.StudentDaoImpl">
+	</bean>
+	 -->
+	
+	
+	<bean id="htmlCourse" class="org.lanqiao.newinstance.HtmlCourse"></bean>
+
+
+	<bean id="teacher" class="org.lanqiao.entity.Teacher"  >
+		<!-- 处理空值 ""  null -->
+		<property name="name" >  
+				<value>zs</value>  
+		</property>
+		<!--
+		<property name="name" > 
+				<value type="java.lang.String">z<![CDATA[<>&]]>s</value>  
+		</property>
+		<property name="name" value="z&lt;s"></property>
+		<bean id="teacher" class="org.lanqiao.entity.Teacher" p:age="25" p:name="ww" >
+		 通过set方式赋值
+		
+		<property name="age" value="23"></property>
+		 -->
+		 <!-- 通过构造器赋值
+		 <constructor-arg value="24" index="1"></constructor-arg>
+		 <constructor-arg value="ls" index="0"></constructor-arg>
+		
+		 <constructor-arg value="24" name="age"></constructor-arg>
+		 <constructor-arg value="ls" name="name"></constructor-arg>
+		  
+		  <constructor-arg value="24" type="int" index="1" name="age"></constructor-arg>
+		 <constructor-arg value="ls" type="String" index="0" name="name"></constructor-arg>
+		  -->
+		  
+		  <constructor-arg  type="int">
+		  	<value>33</value>
+		  </constructor-arg>
+	</bean>
+	<!-- autowire="byName" :
+		Course类中有一个ref属性teacher（属性名），并且 该ioc容器中恰好有一个 bean的id也是teacher
+		bean的id值=类的属性名
+			<bean id="course" class="org.lanqiao.entity.Course"  autowire="byName" >
+				<bean id="course" class="org.lanqiao.entity.Course"  autowire="constructor" >
+	 -->
+	<bean id="course" class="org.lanqiao.entity.Course"  autowire="byType" >
+		<property name="courseName" value="java"></property>
+		<property name="courseHour" value="200"></property>
+		<!-- <property name="teacher" ref="teacher"></property> -->
+	<!--
+	<bean id="course" class="org.lanqiao.entity.Course"  p:teacher-ref="teacher"  p:courseHour="300" p:courseName="hadoop" >
+	
+	
+		  xx.setCourseName("java") 
+			courseName ->setCourseName()
+			courseName ->setCourseName() 
+		
+		<property name="courseName" value="java"></property>
+		<property name="courseHour" value="200"></property>
+		 将teacher对象注入 到 course对象中
+				xx.setTeacher(teacher);
+		 
+		<property name="teacher" ref="teacher"></property>
+
+		<constructor-arg value="c" name="courseName"></constructor-arg>
+		<constructor-arg value="100"></constructor-arg>
+		<constructor-arg ref="teacher"></constructor-arg>
+		-->
+	</bean>
+	
+	<bean id="collectionDemo" class="org.lanqiao.entity.AllCollectionType" >
+		<!-- 通过set方式赋值 
+		<property name="listElement">
+			<list>
+				<value>足球</value>
+				<value>篮球</value>
+				<value>乒乓球</value>
+			</list>
+		</property>
+		-->
+		
+		<constructor-arg name="listElement">
+				<list>
+					<value>足球xx</value>
+					<value>篮球xx</value>
+					<value>乒乓球xxx</value>
+				</list>
+		</constructor-arg>
+		
+		
+		<property name="arrayElement">
+			<!-- <array>
+				<value>足球1</value>
+				<value>篮球1</value>
+				<value>乒乓球1</value>
+			</array>
+			 -->
+			 <list>
+				<value>足球1</value>
+				<value>篮球1</value>
+				<value>乒乓球1</value>
+			</list>
+		</property>
+		
+		<property name="setElement">
+			<!-- <set>
+				<value>足球2</value>
+				<value>篮球1</value>
+				<value>乒乓球2</value>
+			</set>
+			 -->
+			<list>
+				<value>足球2</value>
+				<value>篮球1</value>
+				<value>乒乓球2</value>
+			</list>
+		</property>
+		<property name="mapElement">
+				<map>
+						<entry>
+							<key>
+								<value>foot</value>
+							</key>
+							<value>足球3</value>
+						</entry>
+						
+						<entry>
+							<key>
+								<value>basket</value>
+							</key>
+							<value>篮球3</value>
+						</entry>
+						
+						<entry>
+							<key>
+								<value>pp3</value>
+							</key>
+							<value>乒乓球</value>
+						</entry>
+				</map>
+		</property>
+		<property name="propsElement">
+			<props>
+				<prop key="foot4">足球4</prop>
+				<prop key="basket4">篮球4</prop>
+				<prop key="pp4">乒乓球4</prop>
+			</props>
+		</property>
+	
+	</bean>
+</beans>
