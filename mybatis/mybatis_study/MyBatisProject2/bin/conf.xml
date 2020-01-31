@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE configuration
+PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-config.dtd">
+<configuration>
+	<!-- 通过environments的default值 和  environment的 id 来指定 MyBatis运行时的数据库环境-->
+	<environments default="development">
+		<!-- 开发环境（自己的计算机） -->
+		<environment id="development">
+		
+		
+			<!-- 事务提交方式：
+				JDBC:利用JDBC方式处理事务（commit  rollback  close）
+				MANAGED：将事务交由 其他组件去托管（spring ,jobss）,默认 会关闭连接。
+			
+			<transactionManager type="MANAGED"/>
+				<property name="closeConnection" value="false"/>
+			 -->
+			   <transactionManager type="JDBC" />
+				<!-- 数据源类型：
+						UNPOOLED:传统的JDBC模式（每次访问数据库，均需要 打开、关闭等数据库操作，但是 打开、关闭数据库是比较消耗性能的）
+						POOLED：使用数据库连接池
+						JNDI：从tomcat中获取一个内置的数据库连接池 （数据库连接池-数据源  ）
+				 -->
+				 
+				<dataSource type="POOLED">
+				
+				
+					<!-- 配置数据库信息 -->
+					<property name="driver" value="oracle.jdbc.OracleDriver"/>
+					<property name="url" value="jdbc:oracle:thin:@127.0.0.1:1521:ORCL"/>
+					<property name="username" value="scott"/>
+					<property name="password" value="tiger"/>
+				</dataSource>
+		</environment>
+		
+		<!-- 真正的项目应该在   发布的那台计算机上运行 -->
+		<environment id="shishi">
+			<transactionManager type="JDBC"/>
+				<dataSource type="POOLED">
+				<!-- 配置数据库信息 -->
+				<property name="driver" value="oracle.jdbc.OracleDriver"/>
+				<property name="url" value="jdbc:oracle:thin:@192.168.1.183:1521:ORCL"/>
+				<property name="username" value="scott"/>
+				<property name="password" value="tiger"/>
+			</dataSource>
+		</environment>
+		
+		
+		<!--  -->
+		<environment id="test">
+			<transactionManager type="JDBC"/>
+				<dataSource type="POOLED">
+				<!-- 配置数据库信息 -->
+				<property name="driver" value="oracle.jdbc.OracleDriver"/>
+				<property name="url" value="jdbc:oracle:thin:@192.168.1.111:1521:ORCL"/>
+				<property name="username" value="scott"/>
+				<property name="password" value="tiger"/>
+			</dataSource>
+		</environment>
+	</environments>
+	
+	
+	
+	<mappers>
+		<!-- 加载映射文件 -->
+		<mapper resource="org/lanqiao/entity/studentMapper.xml"/>
+	</mappers>
+</configuration>

@@ -1,0 +1,343 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<!-- namespace:该mapper.xml映射文件的 唯一标识 -->
+<mapper namespace="org.lanqiao.mapper.StudentMapper">
+
+	<!-- 声明次namespace开启二级缓存,MyBatis自带的二级缓存 
+	<cache/>
+	-->
+	<cache  type="org.mybatis.caches.ehcache.EhcacheCache">
+		<!-- 通过property覆盖Ehcache.xml中的值 -->
+		<property name="maxElementsInMemory" value="2000"/>
+		<property name="maxElementsOnDisk" value="3000"/>
+	</cache>
+	
+	<!-- 一对多,延迟加载需要的： 查询班级中的所有学生 -->
+	<select id="queryStudentsByClassId" parameterType="int" resultType="student">
+		select * from student where classId = #{classId}
+	</select>
+
+	<sql id="objectArrayStunos">
+		<where>
+	  		 <if test="array!=null and array.length>0">
+	  		 	<foreach collection="array" open=" and  stuno in (" close=")" 
+	  		 		item="student" separator=",">   
+	  		 		#{student.stuNo}
+	  		 	</foreach>
+	  		 </if>
+	  	</where>
+	</sql>
+	<!-- 一对多
+	<select id="queryClassAndStudents"   parameterType="int" resultMap="class_student_map">
+	查询g1班的班级信息，和g1班的所有学生信息 
+		select  c.*,s.* from student s
+		inner join studentclass c 
+		on c.classid = s.classid
+		where c.classid = #{classId}
+	</select>
+	  -->
+	
+	<!-- 类-表的对应关系 -->
+	<resultMap type="studentClass" id="class_student_map">
+			<!-- 因为 type的主类是班级，因此先配置班级的信息-->
+			<id  property="classId" column="classId"/>
+			<result  property="className" column="className"/>
+			<!-- 配置成员属性学生，一对多;属性类型：javaType，属性的元素类型ofType -->
+			<collection property="students" ofType="student">
+				<id  property="stuNo" column="stuNo"/>
+				<result  property="stuName" column="stuName"/>
+				<result  property="stuAge" column="stuAge"/>
+				
+			</collection>
+	</resultMap>
+
+	<!--  后续通过  namespace.id-->
+	<!--parameterType:输入参数的类型-->
+	
+	<select id="queryStudentCount" 	 	resultType="int" >
+		select count(*) from student 
+	</select>
+	
+	<select id="queryStudentById" 	 parameterType="int"	resultMap="queryStudentByIdMap" >
+		select id,name from student where id = #{id}
+	</select>
+	
+	<resultMap type="student" id="queryStudentByIdMap">
+			<!-- 指定类中的属性 和 表中的字段 对应关系 -->
+			<id property="stuNo"  column="id" />
+			<result property="stuName" column="name" />
+	</resultMap>
+	
+	
+	<select id="queryStudentByIdWithHashMap" 	 parameterType="int"	resultType="student" >
+		select id "stuNo",name "stuName" from student where id = #{id}
+	</select>
+	
+	<!-- 
+	<select id="queryStuByNOrAWishSQLTag" 	 parameterType="student"	resultType="student" >
+		select stuno,stuname,stuage from student where 1=1
+		<if test="student有stuname属性 且不为null"> 
+		<if test="stuName !=null and stuName!=''  "> 
+			and stuname = #{stuName}
+		</if>
+		<if test="stuAge !=null and stuAge!=0  "> 
+			 and  stuage = #{stuAge}
+		</if>
+	</select>
+	-->
+	<select id="queryStuByNOrAWishSQLTag" 	 parameterType="student"	resultType="student" >
+		select stuno,stuname,stuage from student
+		<where>
+			<!-- <if test="student有stuname属性 且不为null"> -->
+			<if test="stuName !=null and stuName!=''  "> 
+				and stuname = #{stuName}
+			</if>
+			<if test="stuAge !=null and stuAge!=0  "> 
+				 and stuage = #{stuAge}
+			</if>
+		</where>
+	</select>
+	
+	<!-- 将多个元素值 放入对象的属性中 -->
+	<select id="queryStudentsWithNosInGrade"  parameterType="grade" resultType="student">
+	  	select * from student 
+	  	<where>
+	  		 <if test="stuNos!=null and stuNos.size>0">
+	  		 	<foreach collection="stuNos" open=" and  stuno in (" close=")" 
+	  		 		item="stuNo" separator=",">   
+	  		 		#{stuNo}
+	  		 	</foreach>
+	  		 </if>
+	  	
+	  	</where>
+	
+	</select>
+		<!-- 将多个元素值 放入数组中 int[] stuNos = {1,2,53} -->
+	<select id="queryStudentsWithArray"  parameterType="int[]" resultType="student">
+	  	select * from student 
+	  	<where>
+	  		 <if test="array!=null and array.length">
+	  		 	<foreach collection="array" open=" and  stuno in (" close=")" 
+	  		 		item="stuNo" separator=",">   
+	  		 		#{stuNo}
+	  		 	</foreach>
+	  		 </if>
+	  	
+	  	</where>
+	
+	</select>
+	
+	
+	<!-- 将多个元素值 放入数组中 List<Integer> stuNos 值 {1,2,53} -->
+	<select id="queryStudentsWithList"  parameterType="list" resultType="student">
+	  	select * from student 
+	  	<where>
+	  		 <if test="list!=null and list.size>0">
+	  		 	<foreach collection="list" open=" and  stuno in (" close=")" 
+	  		 		item="stuNo" separator=",">   
+	  		 		#{stuNo}
+	  		 	</foreach>
+	  		 </if>
+	  	</where>
+	</select>
+	
+	
+	<!-- 将多个元素值 放入对象数组中Student[] students = {student0,student1,student2}  每个studentx包含一个学号属性 -->
+	<select id="queryStudentsWithObjectArray"  parameterType="Object[]" resultType="student">
+	  	select * from student 
+	  	<!--如果sql片段和  引用处不在同一个文件中，则需要 在refid 引用时  加上namespace:   namespace.id
+	   <include refid="org.lanqiao.mapper.abcMapper.objectArrayStunos"></include> -->
+	   <include refid="objectArrayStunos"></include>
+	  
+	</select>
+	
+	<!-- 禁用此select的二级缓存:useCache="false"
+	<select id="queryStudentByStuno" 	parameterType="int"  	resultMap="studentMapping"  useCache="false">
+		select * from student where stuno = ${value}
+	</select>
+	
+	<select id="queryStudentByStuno" 	parameterType="int" flushCache="true" 	resultMap="studentMapping"  useCache="true">
+		select * from student where stuno = ${value}
+	</select>
+	 -->
+	 
+	 <select id="queryStudentByStuno" 	parameterType="int"  	resultMap="studentMapping"  useCache="true">
+		select * from student where stuno = ${value}
+	</select>
+	<!-- 利用业务扩展类实现一对一
+	<select id="queryStudentByNoWithOO" 	parameterType="int"  	resultType="StudentBusiness" >
+		select s.*,c.* from student s  inner join studentcard c
+		on s.cardid=c.cardid
+		where s.stuno = #{stuNo}
+	</select>
+	 -->
+	 <!-- 利用resultMap实现一对一 -->
+	<select id="queryStudentByNoWithOO2" 	parameterType="int"  	resultMap="student_card_map" >
+		select s.*,c.* from student s  inner join studentcard c
+		on s.cardid=c.cardid
+		where s.stuno = #{stuNo}
+	</select>
+	 <!-- 利用resultMap实现一对一 ，延迟加载-->
+	<select id="queryStudentWithOO2LazyLoad" 	parameterType="int"  	resultMap="student_card_lazyLoad_map" >
+		<!-- 先查学生 -->
+		select * from student 
+	</select>
+	<resultMap type="student" id="student_card_lazyLoad_map">
+			<!-- 学生的信息 -->
+			<id  property="stuNo" column="stuNo"/>
+			<result property="stuName" column="stuName" />
+			<result property="stuAge" column="stuAge" />
+			<!-- 一对一时，对象成员使用 association映射;javaType指定该属性的类型
+				此次采用延迟加载：在查询学生时，并不立即加载 学生证信息
+			
+			-->
+			<!-- 学生证  ,通过select 在需要的时候再查学生证 -->
+			<association property="card" javaType="StudentCard"  select="org.lanqiao.mapper.StudentCardMapper.queryCardById"  column="cardid"  >
+				<!-- <id property="cardId" column="cardId"/>             
+					<result property="cardInfo" column="cardInfo"/>
+				 -->	
+			</association>
+	</resultMap>
+	
+	
+	<resultMap type="student" id="student_card_map">
+			<!-- 学生的信息 -->
+			<id  property="stuNo" column="stuNo"/>
+			<result property="stuName" column="stuName" />
+			<result property="stuAge" column="stuAge" />
+			<!-- 一对一时，对象成员使用 association映射;javaType指定该属性的类型-->
+			<association property="card" javaType="StudentCard" >
+					<id property="cardId" column="cardId"/>
+					<result property="cardInfo" column="cardInfo"/>
+			</association>
+			
+	</resultMap>
+	
+	<select id="queryStuByStuno" 	parameterType="int"  	resultType="student" >
+		select * from student where stuno = ${value}
+	</select>
+	
+	
+	<select id="queryStudentByStuname" 	parameterType="string"  	resultType="student" >
+		select stuno,stuname,stuage  from student where stuname = '${value}'
+	</select>
+	
+	<select id="queryStudentOrderByColumn" 	parameterType="string"	resultType="student" >
+		select stuno,stuname,stuage  from student  order by ${value} asc
+	</select>
+	
+		
+	<select id="queryStudentBystuageOrstuName" 	parameterType="student"	resultType="student" > 
+		select stuno,stuname,stuage  from student
+		where stuage= #{stuAge}  or stuname like '%${stuName}%' 
+	</select>
+	
+	<select id="queryStudentBystuageOrstuNameWithHashMap" 	parameterType="HashMap"	resultType="student" > 
+		select stuno,stuname,stuage  from student
+		where stuage= #{stuAge}  or stuname like '%${stuName}%' 
+	</select>
+	
+	<!-- 
+	<select id="queryStudentByaddress" 	parameterType="address"	resultType="student" > 
+		select stuno,stuname,stuage  from student where homeaddress = #{homeAddress}  or schooladdress = '${schoolAddress}'
+	</select>
+	 -->
+	<!-- 输入参数为 级联属性 -->
+	<select id="queryStudentByaddress" 	parameterType="student"	resultType="student" > 
+		select stuno,stuname,stuage  from student where homeaddress = #{address.homeAddress}  or schooladdress = '${address.schoolAddress}'
+	</select>
+	
+	<resultMap type="student" id="studentMapping">
+			<!-- 分为主键id 和非主键 result-->
+			<id property="stuNo"  column="stuno"  />
+			<result property="stuName"  column="stuname" />
+			<result property="stuAge"  column="stuage" />
+			<result property="graName"  column="graname" />
+			<result property="stuSex"  column="stusex"  javaType="boolean" jdbcType="INTEGER"/>
+	
+	</resultMap>
+	
+	
+	 
+	
+	<!-- 查询：使用了类型转换器
+	1如果 类中属性 和表中的字段 类型能够合理识别 （String-varchar2），则可以使用resultType;否则(boolean-number) 使用resultMap
+	2如果 类中属性名 和表中的字段名能够合理识别 （stuNo -stuno）则可以使用resultType;否则(id-stuno) 使用resultMap
+	 -->
+	<select id="queryStudentByStunoWithConverter" 	parameterType="int"  	
+	resultMap="studentResult" >
+		select * from student where stuno = #{stuno}
+	</select>
+	
+	<resultMap type="student" id="studentResult">
+			<!-- 分为主键id 和非主键 result-->
+			<id property="stuNo"  column="stuno"  />
+			<result property="stuName"  column="stuname" />
+			<result property="stuAge"  column="stuage" />
+			<result property="graName"  column="graname" />
+			<result property="stuSex"  column="stusex"  javaType="boolean" jdbcType="INTEGER"/>
+	</resultMap>
+	
+	
+	<!-- 带转换器的增加 -->
+	<insert id="addStudentWithConverter" parameterType="student" >
+		insert into student(stuno,stuname,stuage,graname,stusex) values(#{stuNo},#{stuName},#{stuAge},#{graName} ,#{stuSex ,javaType=boolean  ,jdbcType=INTEGER   } ) 
+	</insert>
+	
+	
+	<insert id="addStudent" parameterType="student" >
+		insert into student(stuno,stuname,stuage,graname) values(#{stuNo},#{stuName},#{stuAge},#{graName}  ) 
+	</insert>
+	
+	
+	<delete id="deleteStudentByStuno"  parameterType="int">
+		delete from student where stuno = #{stuno} 
+	</delete>
+	
+	<update id="updateStudentByStuno" parameterType="student" >
+		update student set stuname=#{stuName} ,stuage=#{stuAge},graname=#{graName} where stuno=#{stuNo} 
+	</update>
+	
+	<select id="queryAllStudents"  resultType="sTuDenT" >
+		select * from student 
+	</select>
+	
+	
+	<!-- 别名作为Map的key -->
+	<select id="queryStudentOutByHashMap"  resultType="HashMap" >
+		select stuno "no",stuname "name" from student    where stuno=1
+	</select>
+	
+	<select id="queryAllStudentsOutByHashMap"  resultType="HashMap" >
+		select stuno "no",stuname "name" from student  
+	</select>
+	
+
+	
+	<!-- 通过调用[存储过程] 实现查询 ,statementType="CALLABLE"
+		存储过程的输入参数，在mybatis用Map来传递（HashMap）
+	-->
+	<select id="queryCountByGradeWithProcedure" statementType="CALLABLE"  parameterType="HashMap" >
+		{
+			CALL queryCountByGradeWithProcedure(
+				#{gName,jdbcType=VARCHAR,mode=IN},
+				#{scount,jdbcType=INTEGER,mode=OUT}
+			) 
+		}	
+	</select>
+	
+	<!-- 通过存储过程实现删除 -->
+	<delete id="deleteStuBynoWithProcedure" statementType="CALLABLE" parameterType="HashMap">
+		{
+			CALL deleteStuBynoWithProcedure(
+				#{sno,jdbcType=INTEGER,mode=IN}
+			) 
+		}	
+	</delete>
+	
+	
+	
+</mapper>

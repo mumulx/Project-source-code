@@ -1,0 +1,12 @@
+<component name="libraryTable">
+  <library name="mybatis-3.4.6">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/src/mybatis-3.4.6.jar!/" />
+      <root url="jar://$PROJECT_DIR$/src/ojdbc7.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="jar://$USER_HOME$/.ideaLibSources/mybatis-3.4.6-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

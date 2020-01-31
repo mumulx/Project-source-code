@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<!-- namespace:该mapper.xml映射文件的 唯一标识 -->
+<mapper namespace="org.lanqiao.mapper.StudentCardMapper">
+	<!-- 查询学生证信息 -->	
+	<select id="queryCardById" parameterType="int"  resultType="studentCard">
+		<!-- 查询学生对应的学生证 -->
+		select * from studentCard  where cardid = #{cardId}
+	</select>
+	<!-- 根据cardid查询学生证的SQL： org.lanqiao.mapper.StudentCardMapper.queryCardById      -->
+	
+	
+</mapper>

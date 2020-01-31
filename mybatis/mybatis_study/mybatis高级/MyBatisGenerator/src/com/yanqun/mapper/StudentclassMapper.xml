@@ -1,0 +1,164 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.yanqun.mapper.StudentclassMapper" >
+  <resultMap id="BaseResultMap" type="com.yanqun.entity.Studentclass" >
+    <id column="CLASSID" property="classid" jdbcType="DECIMAL" />
+    <result column="CLASSNAME" property="classname" jdbcType="VARCHAR" />
+  </resultMap>
+  <sql id="Example_Where_Clause" >
+    <where >
+      <foreach collection="oredCriteria" item="criteria" separator="or" >
+        <if test="criteria.valid" >
+          <trim prefix="(" suffix=")" prefixOverrides="and" >
+            <foreach collection="criteria.criteria" item="criterion" >
+              <choose >
+                <when test="criterion.noValue" >
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue" >
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue" >
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue" >
+                  and ${criterion.condition}
+                  <foreach collection="criterion.value" item="listItem" open="(" close=")" separator="," >
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Update_By_Example_Where_Clause" >
+    <where >
+      <foreach collection="example.oredCriteria" item="criteria" separator="or" >
+        <if test="criteria.valid" >
+          <trim prefix="(" suffix=")" prefixOverrides="and" >
+            <foreach collection="criteria.criteria" item="criterion" >
+              <choose >
+                <when test="criterion.noValue" >
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue" >
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue" >
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue" >
+                  and ${criterion.condition}
+                  <foreach collection="criterion.value" item="listItem" open="(" close=")" separator="," >
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Base_Column_List" >
+    CLASSID, CLASSNAME
+  </sql>
+  <select id="selectByExample" resultMap="BaseResultMap" parameterType="com.yanqun.entity.StudentclassExample" >
+    select
+    <if test="distinct" >
+      distinct
+    </if>
+    <include refid="Base_Column_List" />
+    from STUDENTCLASS
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+    <if test="orderByClause != null" >
+      order by ${orderByClause}
+    </if>
+  </select>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Short" >
+    select 
+    <include refid="Base_Column_List" />
+    from STUDENTCLASS
+    where CLASSID = #{classid,jdbcType=DECIMAL}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Short" >
+    delete from STUDENTCLASS
+    where CLASSID = #{classid,jdbcType=DECIMAL}
+  </delete>
+  <delete id="deleteByExample" parameterType="com.yanqun.entity.StudentclassExample" >
+    delete from STUDENTCLASS
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+  </delete>
+  <insert id="insert" parameterType="com.yanqun.entity.Studentclass" >
+    insert into STUDENTCLASS (CLASSID, CLASSNAME)
+    values (#{classid,jdbcType=DECIMAL}, #{classname,jdbcType=VARCHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="com.yanqun.entity.Studentclass" >
+    insert into STUDENTCLASS
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="classid != null" >
+        CLASSID,
+      </if>
+      <if test="classname != null" >
+        CLASSNAME,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="classid != null" >
+        #{classid,jdbcType=DECIMAL},
+      </if>
+      <if test="classname != null" >
+        #{classname,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <select id="countByExample" parameterType="com.yanqun.entity.StudentclassExample" resultType="java.lang.Integer" >
+    select count(*) from STUDENTCLASS
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+  </select>
+  <update id="updateByExampleSelective" parameterType="map" >
+    update STUDENTCLASS
+    <set >
+      <if test="record.classid != null" >
+        CLASSID = #{record.classid,jdbcType=DECIMAL},
+      </if>
+      <if test="record.classname != null" >
+        CLASSNAME = #{record.classname,jdbcType=VARCHAR},
+      </if>
+    </set>
+    <if test="_parameter != null" >
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByExample" parameterType="map" >
+    update STUDENTCLASS
+    set CLASSID = #{record.classid,jdbcType=DECIMAL},
+      CLASSNAME = #{record.classname,jdbcType=VARCHAR}
+    <if test="_parameter != null" >
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByPrimaryKeySelective" parameterType="com.yanqun.entity.Studentclass" >
+    update STUDENTCLASS
+    <set >
+      <if test="classname != null" >
+        CLASSNAME = #{classname,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where CLASSID = #{classid,jdbcType=DECIMAL}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.yanqun.entity.Studentclass" >
+    update STUDENTCLASS
+    set CLASSNAME = #{classname,jdbcType=VARCHAR}
+    where CLASSID = #{classid,jdbcType=DECIMAL}
+  </update>
+</mapper>

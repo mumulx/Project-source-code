@@ -1,0 +1,227 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.yanqun.mapper.StudentMapper">
+
+    <!--  -->
+   <select id="queryStudents" resultType="com.yanqun.entity.Student" >
+      select * from student order by stuno
+    </select>
+
+
+    <select id="queryStudentByNo" resultType="com.yanqun.entity.Student"
+            parameterType="int">
+        select * from student where stuNo = #{stuNo}
+    <!--
+      <if test="_databaseId == 'oracle'">
+      select * from student where stuNo = #{_parameter}
+      </if>
+
+        <if test="_databaseId == 'mysql'">
+            select * from student where stuNo != #{_parameter}
+        </if>
+    -->
+
+    </select>
+
+    <!--  oracle-->
+    <select id="queryStudentByNoWithONGL" parameterType="student" resultType="student"
+            databaseId="oracle">
+      <!-- select * from student where 1=1 -->
+        select * from student
+
+        <trim prefix="where" suffixOverrides="and">
+
+            <bind name="_queryName" value="'%'+stuName+'%'"/>
+            <if  test="_parameter.stuName != null and _parameter.stuName !='' ">
+                 stuName like #{_queryName} and
+            </if>
+
+            <if  test="graName != null and graName !='' ">
+                 graName like '%${graName}%' and
+            </if>
+            <if  test="stuAge != null and stuAge !='' ">
+                 stuAge = #{stuAge} and
+            </if>
+
+        </trim>
+
+        <!--
+             <trim prefix="where" prefixOverrides="and">
+               <if  test="stuName != null and stuName !='' ">
+                   and stuName like '%${stuName}%'
+               </if>
+               <if  test="graName != null and graName !='' ">
+                   and graName like '%${graName}%'
+               </if>
+               <if  test="stuAge != null and stuAge !='' ">
+                   and stuAge = #{stuAge}
+               </if>
+             </trim>
+       -->
+               <!--
+               <where>
+                   <if  test="stuName != null and stuName !='' ">
+                     and stuName like '%${stuName}%'
+                   </if>
+                   <if  test="graName != null and graName !='' ">
+                       and graName like '%${graName}%'
+                   </if>
+                   <if  test="stuAge != null and stuAge !='' ">
+                       and stuAge = #{stuAge}
+                   </if>
+               </where>
+               -->
+    </select>
+
+
+    <!--mysql
+    <select id="queryStudentByNo" resultType="com.yanqun.entity.Student"
+            parameterType="int" databaseId="mysql">
+       select * from student where stuNo=#{stuNo}
+     </select>
+-->
+
+    <!-- 查询全部学生 -->
+    <select id="queryAllStudents"
+            resultType="com.yanqun.entity.Student" >
+      select * from student
+    </select>
+
+
+    <!-- 增加一个学生 mysql
+        <insert id="addStudent"
+            parameterType="com.yanqun.entity.Student"  databaseId="oracle">
+          <selectKey keyProperty="stuNo" resultType="Integer" order="BEFORE">
+              select myseq.nextval from dual
+          </selectKey>
+
+          insert into student(stuno,stuName,stuAge,graName)
+          values(#{stuNo} , #{stuName},#{stuAge},#{graName})
+   </insert>
+
+
+    <insert id="addStudent"
+            parameterType="com.yanqun.entity.Student"  databaseId="oracle">
+        <selectKey keyProperty="stuNo" resultType="Integer" order="AFTER">
+            select myseq.currval from dual
+        </selectKey>
+
+        insert into student(stuno,stuName,stuAge,graName)
+        values(myseq.nextval , #{stuName},#{stuAge},#{graName})
+    </insert>
+
+
+     <insert id="addStudent"  databaseId="oracle">
+        insert into student(stuno,stuName,stuAge,graName)
+        values(#{sNo} , #{sName},#{sAge},#{gName})
+    </insert>
+-->
+    <!-- 增加一个学生 mysql-->
+    <insert id="addStudent"
+            parameterType="com.yanqun.entity.Student"  databaseId="mysql">
+          insert into student(stuNo,stuName,stuAge,graName)
+          values(#{stuNo} , #{stuName},#{stuAge},#{graName})
+   </insert>
+
+    <insert id="addStudent"  databaseId="oracle">
+        <!--insert into student(stuno,stuName,stuAge,graName)
+        values(#{stuNo} , #{stuName,jdbcType=NULL},#{stuAge},#{graName}) -->
+        insert into student(stuno,stuName,stuAge,graName)
+        values(#{stuNo} , #{stuName},#{stuAge},#{graName})
+    </insert>
+
+
+    <insert id="addStudentOracle"  databaseId="oracle">
+          <foreach collection="list" open="begin" close="end ;" item="student">
+            insert into student(stuno,stuname) values(#{student.stuNo},#{student.stuName}) ;
+          </foreach>
+    </insert>
+
+    <insert id="addStudentMySql"  databaseId="mysql">
+          insert into student(stuno,stuname) values
+          <foreach collection="list" item="student" separator=","  close=";" >
+              (#{student.stuNo},#{student.stuName})
+          </foreach>
+
+    </insert>
+
+
+    <insert id="addStudentMySql2"  databaseId="mysql">
+        <foreach collection="list" item="student"  >
+           insert into student(stuno,stuname) values(#{student.stuNo},#{student.stuName}) ;
+        </foreach>
+    </insert>
+
+    <!-- 根据学号，删除一个学生 -->
+    <delete id="deleteStudentByNo" parameterType="int">
+     delete from student where stuNo=#{stuNo}
+    </delete>
+
+    <!-- 根据学号，修改学生信息 -->
+    <update id="updateStudentByNo"
+            parameterType="com.yanqun.entity.Student">
+      update student
+
+     <trim prefix="set" suffixOverrides=",">
+          <if test="stuName !=null and stuName !=''">
+            stuName=#{stuName},
+          </if>
+
+            <if test="stuAge !=null and stuAge !=''">
+              stuAge=#{stuAge},
+            </if>
+
+            <if test="graName !=null and graName !=''">
+             graName=#{graName}
+            </if>
+        </trim>
+
+       where stuNo=#{stuNo}
+     </update>
+
+
+    <select id="queryStudentOutByHashMap"   parameterType="int"
+                         resultType="HashMap">
+         select stuNo ,stuName ,stuAge
+        from student  where stuNo = #{stuNo}
+    </select>
+
+    <select id="queryStudentsByHashMap"
+            resultType="HashMap">
+         select stuNo ,stuName ,stuAge  from student
+    </select>
+
+
+
+    <!-- 如果字段名 属性名不一致，需要使用resultMap指定对应关系-->
+    <select id="queryStudentsWithResultMap"
+            resultMap ="studentResultMap">
+         select sno, sname,nickname, sage, gname from student
+
+    </select>
+
+    <resultMap type="com.yanqun.entity.Student" id="studentResultMap">
+        <!--主键 -->
+        <id  column="sno" property="stuNo"/>
+        <!--普通字段
+        <result  column="sname" property="stuName"/> -->
+        <result  column="sage" property="stuAge"/>
+        <result  column="gname" property="graName"/>
+
+        <!-- 鉴别器  : 对查询结果进行分支处理： 如果是a年级，则真名，如果b年级，显示昵称-->
+        <discriminator javaType="string"  column="gname">
+            <case value="a" resultType="com.yanqun.entity.Student" >
+                <result  column="sname" property="stuName"/>
+
+            </case>
+
+            <case value="b" resultType="student">
+                <result  column="nickname" property="stuName"/>
+            </case>
+        </discriminator>
+
+    </resultMap>
+
+
+</mapper>

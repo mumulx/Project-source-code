@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE configuration
+        PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-config.dtd">
+
+<configuration>
+
+    <!-- 引用db.properties配置文件 -->
+    <properties resource="db.properties"/>
+
+
+    <settings>
+        <setting name="jdbcTypeForNull" value="NULL"/>
+    </settings>
+    
+    <typeAliases>
+        <!-- 给com.yanqun.entity包（包和子包）中的所有类 起了别名： 不带包名的类名，不区分大小写-->
+        <package name="com.yanqun.entity" ></package>
+
+    </typeAliases>
+
+    <!--default指定環境 -->
+    <environments default="devOracle">
+        <!--oracle -->
+        <environment id="devOracle">
+            <transactionManager type="JDBC" />
+            <!-- 配置数据库连接信息 -->
+            <dataSource type="POOLED">
+                <property name="driver"  value="${oracle.driver}" />
+                <property name="url"
+                          value="${oracle.url}" />
+                <property name="username" value="${oracle.username}" />
+                <property name="password" value="${oracle.password}" />
+            </dataSource>
+        </environment>
+        <!--mysql -->
+        <environment id="devMysql">
+            <transactionManager type="JDBC" />
+            <!-- 配置数据库连接信息 -->
+            <dataSource type="POOLED">
+                <property name="driver"  value="${mysql.driver}" />
+                <property name="url"
+                          value="${mysql.url}" />
+                <property name="username" value="${mysql.username}" />
+                <property name="password" value="${mysql.password}" />
+            </dataSource>
+        </environment>
+    </environments>
+
+    <!-- 配置数据库支持类-->
+    <databaseIdProvider type="DB_VENDOR">
+            <property name="MySQL" value="mysql" />
+            <property name="Oracle" value="oracle" />
+    </databaseIdProvider>
+
+
+
+    <!-- 在配置文件（conf.xml）中注册SQL映射文件（studentMapper.xml）-->
+    <mappers>
+        <!--  <mapper resource="com/yanqun/mapper/studentMapper.xml" />-->
+          <!--  <mapper class="com.yanqun.mapper.StudentMapper" /> -->
+          <package name="com.yanqun.mapper" />
+      </mappers>
+  </configuration>

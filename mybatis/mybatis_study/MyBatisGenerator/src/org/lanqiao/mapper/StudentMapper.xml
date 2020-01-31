@@ -1,0 +1,275 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="org.lanqiao.mapper.StudentMapper">
+  <resultMap id="BaseResultMap" type="org.lanqiao.entity.Student">
+    <id column="STUNO" jdbcType="DECIMAL" property="stuno" />
+    <result column="STUNAME" jdbcType="VARCHAR" property="stuname" />
+    <result column="STUAGE" jdbcType="DECIMAL" property="stuage" />
+    <result column="GRANAME" jdbcType="VARCHAR" property="graname" />
+    <result column="STUSEX" jdbcType="DECIMAL" property="stusex" />
+    <result column="HOMEADDRESS" jdbcType="VARCHAR" property="homeaddress" />
+    <result column="SCHOOLADDRESS" jdbcType="VARCHAR" property="schooladdress" />
+    <result column="CARDID" jdbcType="DECIMAL" property="cardid" />
+    <result column="CLASSID" jdbcType="DECIMAL" property="classid" />
+  </resultMap>
+  <sql id="Example_Where_Clause">
+    <where>
+      <foreach collection="oredCriteria" item="criteria" separator="or">
+        <if test="criteria.valid">
+          <trim prefix="(" prefixOverrides="and" suffix=")">
+            <foreach collection="criteria.criteria" item="criterion">
+              <choose>
+                <when test="criterion.noValue">
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue">
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue">
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue">
+                  and ${criterion.condition}
+                  <foreach close=")" collection="criterion.value" item="listItem" open="(" separator=",">
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Update_By_Example_Where_Clause">
+    <where>
+      <foreach collection="example.oredCriteria" item="criteria" separator="or">
+        <if test="criteria.valid">
+          <trim prefix="(" prefixOverrides="and" suffix=")">
+            <foreach collection="criteria.criteria" item="criterion">
+              <choose>
+                <when test="criterion.noValue">
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue">
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue">
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue">
+                  and ${criterion.condition}
+                  <foreach close=")" collection="criterion.value" item="listItem" open="(" separator=",">
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Base_Column_List">
+    STUNO, STUNAME, STUAGE, GRANAME, STUSEX, HOMEADDRESS, SCHOOLADDRESS, CARDID, CLASSID
+  </sql>
+  <select id="selectByExample" parameterType="org.lanqiao.entity.StudentExample" resultMap="BaseResultMap">
+    select
+    <if test="distinct">
+      distinct
+    </if>
+    <include refid="Base_Column_List" />
+    from STUDENT
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+    <if test="orderByClause != null">
+      order by ${orderByClause}
+    </if>
+  </select>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Short" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from STUDENT
+    where STUNO = #{stuno,jdbcType=DECIMAL}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Short">
+    delete from STUDENT
+    where STUNO = #{stuno,jdbcType=DECIMAL}
+  </delete>
+  <delete id="deleteByExample" parameterType="org.lanqiao.entity.StudentExample">
+    delete from STUDENT
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+  </delete>
+  <insert id="insert" parameterType="org.lanqiao.entity.Student">
+    insert into STUDENT (STUNO, STUNAME, STUAGE, 
+      GRANAME, STUSEX, HOMEADDRESS, 
+      SCHOOLADDRESS, CARDID, CLASSID
+      )
+    values (#{stuno,jdbcType=DECIMAL}, #{stuname,jdbcType=VARCHAR}, #{stuage,jdbcType=DECIMAL}, 
+      #{graname,jdbcType=VARCHAR}, #{stusex,jdbcType=DECIMAL}, #{homeaddress,jdbcType=VARCHAR}, 
+      #{schooladdress,jdbcType=VARCHAR}, #{cardid,jdbcType=DECIMAL}, #{classid,jdbcType=DECIMAL}
+      )
+  </insert>
+  <insert id="insertSelective" parameterType="org.lanqiao.entity.Student">
+    insert into STUDENT
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="stuno != null">
+        STUNO,
+      </if>
+      <if test="stuname != null">
+        STUNAME,
+      </if>
+      <if test="stuage != null">
+        STUAGE,
+      </if>
+      <if test="graname != null">
+        GRANAME,
+      </if>
+      <if test="stusex != null">
+        STUSEX,
+      </if>
+      <if test="homeaddress != null">
+        HOMEADDRESS,
+      </if>
+      <if test="schooladdress != null">
+        SCHOOLADDRESS,
+      </if>
+      <if test="cardid != null">
+        CARDID,
+      </if>
+      <if test="classid != null">
+        CLASSID,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="stuno != null">
+        #{stuno,jdbcType=DECIMAL},
+      </if>
+      <if test="stuname != null">
+        #{stuname,jdbcType=VARCHAR},
+      </if>
+      <if test="stuage != null">
+        #{stuage,jdbcType=DECIMAL},
+      </if>
+      <if test="graname != null">
+        #{graname,jdbcType=VARCHAR},
+      </if>
+      <if test="stusex != null">
+        #{stusex,jdbcType=DECIMAL},
+      </if>
+      <if test="homeaddress != null">
+        #{homeaddress,jdbcType=VARCHAR},
+      </if>
+      <if test="schooladdress != null">
+        #{schooladdress,jdbcType=VARCHAR},
+      </if>
+      <if test="cardid != null">
+        #{cardid,jdbcType=DECIMAL},
+      </if>
+      <if test="classid != null">
+        #{classid,jdbcType=DECIMAL},
+      </if>
+    </trim>
+  </insert>
+  <select id="countByExample" parameterType="org.lanqiao.entity.StudentExample" resultType="java.lang.Long">
+    select count(*) from STUDENT
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+  </select>
+  <update id="updateByExampleSelective" parameterType="map">
+    update STUDENT
+    <set>
+      <if test="record.stuno != null">
+        STUNO = #{record.stuno,jdbcType=DECIMAL},
+      </if>
+      <if test="record.stuname != null">
+        STUNAME = #{record.stuname,jdbcType=VARCHAR},
+      </if>
+      <if test="record.stuage != null">
+        STUAGE = #{record.stuage,jdbcType=DECIMAL},
+      </if>
+      <if test="record.graname != null">
+        GRANAME = #{record.graname,jdbcType=VARCHAR},
+      </if>
+      <if test="record.stusex != null">
+        STUSEX = #{record.stusex,jdbcType=DECIMAL},
+      </if>
+      <if test="record.homeaddress != null">
+        HOMEADDRESS = #{record.homeaddress,jdbcType=VARCHAR},
+      </if>
+      <if test="record.schooladdress != null">
+        SCHOOLADDRESS = #{record.schooladdress,jdbcType=VARCHAR},
+      </if>
+      <if test="record.cardid != null">
+        CARDID = #{record.cardid,jdbcType=DECIMAL},
+      </if>
+      <if test="record.classid != null">
+        CLASSID = #{record.classid,jdbcType=DECIMAL},
+      </if>
+    </set>
+    <if test="_parameter != null">
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByExample" parameterType="map">
+    update STUDENT
+    set STUNO = #{record.stuno,jdbcType=DECIMAL},
+      STUNAME = #{record.stuname,jdbcType=VARCHAR},
+      STUAGE = #{record.stuage,jdbcType=DECIMAL},
+      GRANAME = #{record.graname,jdbcType=VARCHAR},
+      STUSEX = #{record.stusex,jdbcType=DECIMAL},
+      HOMEADDRESS = #{record.homeaddress,jdbcType=VARCHAR},
+      SCHOOLADDRESS = #{record.schooladdress,jdbcType=VARCHAR},
+      CARDID = #{record.cardid,jdbcType=DECIMAL},
+      CLASSID = #{record.classid,jdbcType=DECIMAL}
+    <if test="_parameter != null">
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByPrimaryKeySelective" parameterType="org.lanqiao.entity.Student">
+    update STUDENT
+    <set>
+      <if test="stuname != null">
+        STUNAME = #{stuname,jdbcType=VARCHAR},
+      </if>
+      <if test="stuage != null">
+        STUAGE = #{stuage,jdbcType=DECIMAL},
+      </if>
+      <if test="graname != null">
+        GRANAME = #{graname,jdbcType=VARCHAR},
+      </if>
+      <if test="stusex != null">
+        STUSEX = #{stusex,jdbcType=DECIMAL},
+      </if>
+      <if test="homeaddress != null">
+        HOMEADDRESS = #{homeaddress,jdbcType=VARCHAR},
+      </if>
+      <if test="schooladdress != null">
+        SCHOOLADDRESS = #{schooladdress,jdbcType=VARCHAR},
+      </if>
+      <if test="cardid != null">
+        CARDID = #{cardid,jdbcType=DECIMAL},
+      </if>
+      <if test="classid != null">
+        CLASSID = #{classid,jdbcType=DECIMAL},
+      </if>
+    </set>
+    where STUNO = #{stuno,jdbcType=DECIMAL}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="org.lanqiao.entity.Student">
+    update STUDENT
+    set STUNAME = #{stuname,jdbcType=VARCHAR},
+      STUAGE = #{stuage,jdbcType=DECIMAL},
+      GRANAME = #{graname,jdbcType=VARCHAR},
+      STUSEX = #{stusex,jdbcType=DECIMAL},
+      HOMEADDRESS = #{homeaddress,jdbcType=VARCHAR},
+      SCHOOLADDRESS = #{schooladdress,jdbcType=VARCHAR},
+      CARDID = #{cardid,jdbcType=DECIMAL},
+      CLASSID = #{classid,jdbcType=DECIMAL}
+    where STUNO = #{stuno,jdbcType=DECIMAL}
+  </update>
+</mapper>
