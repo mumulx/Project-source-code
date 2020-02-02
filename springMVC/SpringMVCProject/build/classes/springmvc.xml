@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:aop="http://www.springframework.org/schema/aop"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:mvc="http://www.springframework.org/schema/mvc"
+	xsi:schemaLocation="http://www.springframework.org/schema/mvc http://www.springframework.org/schema/mvc/spring-mvc-4.3.xsd
+		http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.3.xsd
+		http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-4.3.xsd">
+	
+	<!-- 将自己写的拦截器 配置到springmvc中（spring）；默认拦截全部请求 -->
+	<mvc:interceptors>
+		
+			<!-- 配置具体的拦截路径 -->
+			<mvc:interceptor>
+				<!-- 指定拦截的路径,基于ant风格 -->
+				<mvc:mapping path="/**"/>  
+				<!-- 指定拦不截的路径 -->
+				<mvc:exclude-mapping path="/handler/testUpload"/> 
+				<bean  class="org.lanqiao.interceptor.MyInterceptor"></bean>
+			</mvc:interceptor>
+			
+				<!-- 配置具体的拦截路径 -->
+			<mvc:interceptor>
+				<!-- 指定拦截的路径,基于ant风格 -->
+				<mvc:mapping path="/**"/>  
+				<!-- 指定拦不截的路径 -->
+				<mvc:exclude-mapping path="/handler/testUpload"/> 
+				<bean  class="org.lanqiao.interceptor.MySecondInterceptor"></bean>
+			</mvc:interceptor>
+	</mvc:interceptors>
+	
+	<!-- 扫描 有注解的包 -->
+	<context:component-scan base-package="org.lanqiao.handler"></context:component-scan>
+	
+	<!--配置视图解析器(InternalResourceViewResolver)  -->
+	<bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+		<property name="prefix" value="/views/"></property>
+		<property name="suffix" value=".jsp"></property>
+	</bean>
+
+	<!--view-name会被视图解析器 加上前缀、后缀  -->
+	<mvc:view-controller path="handler/testMvcViewController" view-name="success"/>
+	
+	
+	<!-- 该注解 会让 springmvc： 接收一个请求，并且该请求 没有对应的@requestmapping时，将该请求 交给服务器默认的servlet去处理（直接访问）  -->
+	<mvc:default-servlet-handler></mvc:default-servlet-handler>
+	
+	
+	<!-- 1将 自定义转换器 纳入SpringIOC容器 -->
+	<bean  id="myConverter" class="org.lanqiao.converter.MyConverter"></bean>
+	
+	<!-- 2将myConverter再纳入 SpringMVC提供的转换器Bean
+	<bean id="conversionService"  class="org.springframework.context.support.ConversionServiceFactoryBean">
+		<property name="converters">
+			<set>
+				<ref bean="myConverter"/>
+			</set>
+		</property>
+	</bean>
+	 -->
+	
+	<!-- 3将conversionService注册到annotation-driven中 -->
+	<!--此配置是SpringMVC的基础配置，很功能都需要通过该注解来协调  -->
+	<mvc:annotation-driven conversion-service="conversionService"></mvc:annotation-driven>
+	
+	<!-- 配置 数据格式化 注解 所依赖的bean
+	FormattingConversionServiceFactoryBean:既可以实现格式化、又可以实现类型转换
+	 -->
+	<bean id="conversionService" class="org.springframework.format.support.FormattingConversionServiceFactoryBean">
+		<property name="converters">
+			<set>
+				<ref bean="myConverter"/>
+			</set>
+		</property>
+	</bean>	
+	
+	
+	<!-- 配置CommonsMultipartResolver，用于实现文件上传
+	将其加入SpringIOC容器.
+		springIoc容器在初始化时，会自动寻找一个Id="multipartResolver"的bean，并将其加入Ioc容器
+ -->
+	<bean id="multipartResolver" class="org.springframework.web.multipart.commons.CommonsMultipartResolver">
+			<property name="defaultEncoding" value="UTF-8"></property>
+			<!-- 上传单个文件的最大值，单位Byte;如果-1，表示无限制 -->
+			<property name="maxUploadSize"  value="104857600"></property>
+	</bean>
+	
+	
+	
+</beans>
