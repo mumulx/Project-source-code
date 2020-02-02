@@ -1,0 +1,13 @@
+<component name="libraryTable">
+  <library name="libs">
+    <CLASSES>
+      <root url="file://$PROJECT_DIR$/../../../../jar/tomcat/spring/spring-framework-4.3.9.RELEASE/libs" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="file://$PROJECT_DIR$/../../../../jar/tomcat/spring/spring-framework-4.3.9.RELEASE/libs" />
+    </SOURCES>
+    <jarDirectory url="file://$PROJECT_DIR$/../../../../jar/tomcat/spring/spring-framework-4.3.9.RELEASE/libs" recursive="false" />
+    <jarDirectory url="file://$PROJECT_DIR$/../../../../jar/tomcat/spring/spring-framework-4.3.9.RELEASE/libs" recursive="false" type="SOURCES" />
+  </library>
+</component>
