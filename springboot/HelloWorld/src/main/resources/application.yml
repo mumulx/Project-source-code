@@ -1,0 +1,40 @@
+server:
+  port: 8883
+#spring:
+#  profiles:
+#    active: dev
+---
+server:
+  port: 8884
+spring:
+  profiles: dev
+
+---  
+server:
+  port: 8885
+spring:
+  profiles: test
+  
+student:
+  uname: x   
+  name: ${student.user.name2:无名}
+  #age: 23
+  sex: true
+  birthday: 2019/02/12
+  location:  {province: "陕222西",city: '西\n安',zone: 莲湖\n区}
+      #province: 陕西1
+      #city: 西安1
+      #zone: 莲湖区1
+       #行内写法
+  hobbies: 足球2,篮球22    # 行内写法
+      
+     # - 足球
+     # - 篮球
+  skills:
+      编程333,金融33 # 行内写法
+     # - 编程
+     # - 金融
+  pet: {nick-name: wc555,strain: hsq}
+  email: 157468995@qq.com
+    #nickName: wc
+    #strain: hsq
