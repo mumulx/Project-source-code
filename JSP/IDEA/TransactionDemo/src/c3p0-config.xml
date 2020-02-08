@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<c3p0-config>
+    <default-config>
+        <!-- 如果要研究某个xml中可以设置哪些属性。找相关类的 属性 或者setXxx()-->
+        <property name="user">scott</property>
+        <property name="password">tiger</property>
+        <property name="driverClass">oracle.jdbc.driver.OracleDriver</property>
+        <property name="jdbcUrl">jdbc:oracle:thin:@127.0.0.1:1521:ORCL</property>
+        <property name="checkoutTimeout">30000</property>
+    </default-config>
+
+
+    <named-config name="yanqun">
+        <property name="user">scott</property>
+        <property name="password">tiger</property>
+        <property name="driverClass">oracle.jdbc.driver.OracleDriver</property>
+        <property name="jdbcUrl">jdbc:oracle:thin:@127.0.0.1:1521:ORCL</property>
+        <property name="checkoutTimeout">20000</property>
+
+    </named-config>
+
+
+
+
+
+</c3p0-config>

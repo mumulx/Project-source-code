@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://java.sun.com/xml/ns/javaee" xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd" id="WebApp_ID" version="2.5">
+  <display-name>Servlet25Project</display-name>
+  <welcome-file-list>
+    <welcome-file>index.html</welcome-file>
+    <welcome-file>index.htm</welcome-file>
+    <welcome-file>index.jsp</welcome-file>
+    <welcome-file>default.html</welcome-file>
+    <welcome-file>default.htm</welcome-file>
+    <welcome-file>default.jsp</welcome-file>
+  </welcome-file-list>
+  <context-param>
+    <param-name>globalParam</param-name>
+    <param-value>global value..</param-value>
+  </context-param>
+  <servlet>
+    <servlet-name>WelcomeServlet</servlet-name>
+    <servlet-class>org.lanqiao.servlet.WelcomeServlet</servlet-class>
+    <init-param>
+      <param-name>servletparamname</param-name>
+      <param-value>servletparamvalue...</param-value>
+    </init-param>
+    <load-on-startup>1</load-on-startup>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>WelcomeServlet</servlet-name>
+    <url-pattern>/WelcomeServlet</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <servlet-name>WelcomeServlet2</servlet-name>
+    <servlet-class>org.lanqiao.servlet.WelcomeServlet2</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>WelcomeServlet2</servlet-name>
+    <url-pattern>/WelcomeServlet2</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>X</display-name>
+    <servlet-name>X</servlet-name>
+    <servlet-class>emptyimpl.X</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>X</servlet-name>
+    <url-pattern>/X</url-pattern>
+  </servlet-mapping>
+</web-app>

@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- 标签库的头文件-->
+<taglib xmlns="http://java.sun.com/xml/ns/j2ee"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://java.sun.com/xml/ns/j2ee http://java.sun.com/xml/ns/j2ee/web-jsptaglibrary_2_0.xsd"
+    version="2.0">
+	
+    <description>这是我的简单迭代器标签库</description>
+    <tlib-version>1.0</tlib-version>
+    <short-name>mysimpletaglib</short-name>
+    <uri>http://www.yanqunsimple.com</uri>
+	
+	<!-- -自定义标签的相关信息 -->
+    <tag>
+        <description>这是我的简单迭代器标签</description>
+        <name>mysimpletag</name>
+		
+        <tag-class>com.yanqun.tag.MySimpleTagIterator</tag-class>
+        <body-content>scriptless</body-content>
+		<attribute>
+			<name>num</name>
+			<required>true</required>
+		</attribute>
+		
+		
+    </tag>
+
+    <tag>
+        <name>myToUpperCase</name>
+        <tag-class>com.yanqun.tag.ToUpperCase</tag-class>
+        <body-content>scriptless</body-content>
+    </tag>
+
+
+    <tag>
+        <name>login</name>
+        <tag-class>com.yanqun.tag.LoginTag</tag-class>
+        <body-content>scriptless</body-content>
+    </tag>
+
+
+</taglib>
+
+
+
+
