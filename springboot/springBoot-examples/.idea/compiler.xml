@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <annotationProcessing>
+      <profile name="Maven default annotation processors profile" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="springboot-docker-client" />
+        <module name="sptingboot-lettuce" />
+        <module name="springboot-cloud-service" />
+        <module name="springboot-actuator" />
+        <module name="springboot-elasticsearch" />
+        <module name="springboot-rabbitmq" />
+        <module name="springboot-jedis" />
+        <module name="springboot-security" />
+        <module name="springboot-cloud-center" />
+        <module name="springboot-cloud-client" />
+        <module name="springboot-task" />
+        <module name="springboot-deploy" />
+        <module name="springboot-docker-server" />
+      </profile>
+    </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="springboot-actuator" target="1.8" />
+      <module name="springboot-cloud-center" target="1.8" />
+      <module name="springboot-cloud-client" target="1.8" />
+      <module name="springboot-cloud-service" target="1.8" />
+      <module name="springboot-deploy" target="1.8" />
+      <module name="springboot-docker-client" target="1.8" />
+      <module name="springboot-docker-server" target="1.8" />
+      <module name="springboot-elasticsearch" target="1.8" />
+      <module name="springboot-jedis" target="1.8" />
+      <module name="springboot-rabbitmq" target="1.8" />
+      <module name="springboot-redis" target="1.8" />
+      <module name="springboot-security" target="1.8" />
+      <module name="springboot-task" target="1.8" />
+      <module name="sptingboot-lettuce" target="1.8" />
+    </bytecodeTargetLevel>
+  </component>
+  <component name="JavacSettings">
+    <option name="ADDITIONAL_OPTIONS_OVERRIDE">
+      <module name="springboot-actuator" options="-parameters" />
+      <module name="springboot-cloud-center" options="-parameters" />
+      <module name="springboot-cloud-client" options="-parameters" />
+      <module name="springboot-cloud-service" options="-parameters" />
+      <module name="springboot-deploy" options="-parameters" />
+      <module name="springboot-docker-client" options="-parameters" />
+      <module name="springboot-docker-server" options="-parameters" />
+      <module name="springboot-elasticsearch" options="-parameters" />
+      <module name="springboot-jedis" options="-parameters" />
+      <module name="springboot-rabbitmq" options="-parameters" />
+      <module name="springboot-redis" options="-parameters" />
+      <module name="springboot-security" options="-parameters" />
+      <module name="springboot-task" options="-parameters" />
+      <module name="sptingboot-lettuce" options="-parameters" />
+    </option>
+  </component>
+</project>

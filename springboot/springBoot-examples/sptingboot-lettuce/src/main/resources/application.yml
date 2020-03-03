@@ -1,0 +1,14 @@
+server:
+  port: 8080
+spring:
+  redis:
+    port: 6379
+    password: 135451
+    host: 39.105.184.165
+    lettuce:
+      pool:
+        max-idle: 10 #最大空闲数
+        max-active: 10 #最大连接数
+        min-idle: 2 #最小连接数
+        max-wait: 1000 #连接池最大阻塞等待事件（使用负值表示没有限制）
+    timeout: 2000 # 连接超时

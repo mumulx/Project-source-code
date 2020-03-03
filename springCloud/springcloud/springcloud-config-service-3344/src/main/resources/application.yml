@@ -1,0 +1,20 @@
+server:
+  port: 3344
+spring:
+  application:
+    name: springcloud-config-server-3344
+
+  #连接远端仓库
+  cloud:
+    config:
+      server:
+        git:
+          uri: https://github.com/mumulx/springCloud-config.git #是http，不是ssh
+
+
+
+
+
+
+
+

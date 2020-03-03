@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <annotationProcessing>
+      <profile name="Maven default annotation processors profile" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="springcloud-config-provider-8001" />
+        <module name="springcloud-config-client-3355" />
+        <module name="springcloud-eureka-7002" />
+        <module name="springcloud-provider-8003" />
+        <module name="springcloud-config-service-3344" />
+        <module name="springcloud-provider-8001" />
+        <module name="springcloud-consumer-80" />
+        <module name="springcloud-provider-8001-hystrix" />
+        <module name="springcloud-eureka-7001" />
+        <module name="springcloud-provider-8002" />
+        <module name="springcloud-consumer-hystrix-dashboard" />
+        <module name="springcloud-zuul-9527" />
+        <module name="springcloud-api" />
+        <module name="springcloud-eureka-7003" />
+        <module name="springcloud-config-eureka-7001" />
+        <module name="springcloud-comsumer-feign" />
+      </profile>
+    </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="springcloud-consumer-feign-81" target="1.8" />
+      <module name="springcloud-privider-8001" target="1.8" />
+    </bytecodeTargetLevel>
+  </component>
+  <component name="JavacSettings">
+    <option name="ADDITIONAL_OPTIONS_OVERRIDE">
+      <module name="springcloud-provider-8001" options="" />
+    </option>
+  </component>
+</project>

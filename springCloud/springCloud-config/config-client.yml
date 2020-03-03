@@ -1,0 +1,32 @@
+spring:
+  profiles:
+    active: dev
+---
+server:
+  port: 8201
+#spring的配置
+spring:
+  profiles: dev
+  application:
+    name: springcloud-provider-dept
+
+#Eureka的配置，服务注册在哪里
+eureka:
+  client:
+    service-url:
+      defaultZone:  http://localhost:7002/eureka/,http://127.0.0.1:7003/eureka/
+
+---
+server:
+  port: 8202
+#spring的配置
+spring:
+  profiles: test
+  application:
+    name: springcloud-provider-dept
+
+#Eureka的配置，服务注册在哪里
+eureka:
+  client:
+    service-url:
+      defaultZone:  http://localhost:7002/eureka/,http://127.0.0.1:7003/eureka/

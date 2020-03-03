@@ -1,0 +1,19 @@
+依赖:
+!--        hystrix的feign服务降级需要的依赖-->
+        <dependency>
+            <groupId>io.github.openfeign</groupId>
+            <artifactId>feign-hystrix</artifactId>
+            <version>10.1.0</version>
+        </dependency>
+
+在api服务下:
+	service包：将类注入spirng容器添加@Component
+		1.添加一个类(DeptClientServiceFallbackFactory)实现FallbackFactory
+		2.在它实现的方法中 new DeptClientServicefeign(),因为DeptClientService是接口,要重写里面的方法
+		3.接口要把实现降级处理的类关联起来
+		@FeignClient(value = "SPRINGCLOUD-PROVIDER-DEPT, fallbackFactory = “DeptClientServiceFallbackFactory.class)
+		4.在application.yml配置添加(开启降级服务):
+			feign:
+			        hystrix:
+				enabled: true	
+		

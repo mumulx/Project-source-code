@@ -1,0 +1,36 @@
+server:
+  port: 9527
+spring:
+  application:
+    name: springCloud-zuul
+#Eureka的配置，服务注册到哪里
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:7001/eureka/,http://localhost:7002/eureka/,http://localhost:7003/eureka/
+  instance:
+    instance-id: springcloud-zuul-9527
+    prefer-ip-address: true
+#info配置
+info:
+  app.name: mumulx-springcloud
+  company.name: com.mumulx
+
+# zuul配置
+zuul:
+  routes:
+    mydept.serviceId: springcloud-provider-dept
+    mydept.path: /mydept/**                         #将服务名改一个名字代替服务名
+  ignored-services: springcloud-provider-dept       #忽略服务名，不能用服务名访问了 可以忽略全部的  使用"*"
+  # prefix: /mumu  #设置公共前缀http://www.mywin10.com:9527/mumulx/mydept/dept/get/2
+
+
+
+
+
+
+
+
+
+
+

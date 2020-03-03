@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="MavenProjectsManager">
+    <option name="originalFiles">
+      <list>
+        <option value="$PROJECT_DIR$/springboot-jedis/pom.xml" />
+        <option value="$PROJECT_DIR$/sptingboot-lettuce/pom.xml" />
+        <option value="$PROJECT_DIR$/springboot-redis/pom.xml" />
+        <option value="$PROJECT_DIR$/springboot-rabbitmq/pom.xml" />
+        <option value="$PROJECT_DIR$/springboot-elasticsearch/pom.xml" />
+        <option value="$PROJECT_DIR$/springboot-task/pom.xml" />
+        <option value="$PROJECT_DIR$/springboot-security/pom.xml" />
+        <option value="$PROJECT_DIR$/springboot-cloud-center/pom.xml" />
+        <option value="$PROJECT_DIR$/springboot-cloud-service/pom.xml" />
+        <option value="$PROJECT_DIR$/springboot-cloud-client/pom.xml" />
+        <option value="$PROJECT_DIR$/springboot-deploy/pom.xml" />
+        <option value="$PROJECT_DIR$/springboot-actuator/pom.xml" />
+      </list>
+    </option>
+  </component>
+  <component name="ProjectRootManager">
+    <output url="file://$PROJECT_DIR$/out" />
+  </component>
+</project>

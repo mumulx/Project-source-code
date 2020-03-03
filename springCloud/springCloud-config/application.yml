@@ -1,0 +1,17 @@
+spring:
+  profiles:
+    active: dev
+---
+#spring的配置
+spring:
+  profiles: dev
+  application:
+    name: springcloud-config-dev
+
+---
+#spring的配置
+spring:
+  profiles: test
+  application:
+    name: springcloud-config-test
+

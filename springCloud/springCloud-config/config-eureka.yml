@@ -1,0 +1,55 @@
+spring:
+  profiles:
+    active: dev
+
+---
+
+server:
+  port: 7001
+#spring的配置
+spring:
+  profiles: dev
+  application:
+    name: springcloud-config-eureka
+#eureka配置
+eureka:
+  instance:
+    hostname: localhost  #Eureka服务端的实例名称,localhost代表服务器的地址，最后要换的
+  client:
+    register-with-eureka: false  #表示是否向eureka注册中心注册自己
+    fetch-registry: false       #fetch-registry如果为false, 则表示自己为注册中心
+    service-url:                # 监控页面
+      #单机不做集群defaultZone: http://${eureka.instance.hostname}:${server.port}/eureka/
+       #localhost代表服务器的地址，最后要换的 ,集群互相关联7001关联7002和7003
+       #其实用的端口号都应该是7001，关联的是不同服务器的地址，因为我只有一个电脑，就用了端口号代替
+      defaultZone: http://localhost:7002/eureka/,http://127.0.0.1:7003/eureka/
+
+---
+
+server:
+  port: 7001
+#spring的配置
+spring:
+  profiles: test
+  application:
+    name: springcloud-config-eureka
+#eureka配置
+eureka:
+  instance:
+    hostname: localhost  #Eureka服务端的实例名称,localhost代表服务器的地址，最后要换的
+  client:
+    register-with-eureka: false  #表示是否向eureka注册中心注册自己
+    fetch-registry: false       #fetch-registry如果为false, 则表示自己为注册中心
+    service-url:                # 监控页面
+      #单机不做集群defaultZone: http://${eureka.instance.hostname}:${server.port}/eureka/
+       #localhost代表服务器的地址，最后要换的 ,集群互相关联7001关联7002和7003
+       #其实用的端口号都应该是7001，关联的是不同服务器的地址，因为我只有一个电脑，就用了端口号代替
+      defaultZone: http://localhost:7002/eureka/,http://127.0.0.1:7003/eureka/
+
+
+
+
+
+
+
+

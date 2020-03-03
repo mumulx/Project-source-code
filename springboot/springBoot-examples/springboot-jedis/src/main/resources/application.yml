@@ -1,0 +1,13 @@
+server:
+  port: 8080
+spring:
+  redis:
+    port: 6379
+    password: 135451
+    host: 39.105.184.165
+    jedis:
+      pool:
+        max-idle: 6 #最大空闲数
+        max-active: 10 #最大连接数
+        min-idle: 2 #最小连接数
+    timeout: 2000 # 连接超时

@@ -1,0 +1,11 @@
+#系统级别的配置(高于用户级别的配置)
+#只能识别application.yml和boostrap.yml,别的名字不能识别
+spring:
+  cloud:
+    config:
+      #springcloud-config采用的是sv(服务器客户端)的架构模式
+      #服务器(3344)连gitee，客户端(3355)连服务器
+      uri: http://localhost:3344  #服务器地址
+      name: config-eureka         #需要从gitee上读取的资源名称
+      profile: dev                #开发模式  test是测试模式
+      label: master               #geitee的分支

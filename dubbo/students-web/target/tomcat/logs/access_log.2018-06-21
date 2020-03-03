@@ -1,0 +1,6 @@
+0:0:0:0:0:0:0:1 - - [21/Jun/2018:14:44:17 +0800] "GET /controller/queryStudent.action HTTP/1.1" 404 949 http-bio-8882-exec-1 11173
+0:0:0:0:0:0:0:1 - - [21/Jun/2018:14:44:52 +0800] "GET /controller/queryStudentByNo.action HTTP/1.1" 500 11310 http-bio-8882-exec-2 196
+0:0:0:0:0:0:0:1 - - [21/Jun/2018:14:51:01 +0800] "GET /controller/queryStudentByNo.action HTTP/1.1" 200 7 http-bio-8882-exec-1 11987
+0:0:0:0:0:0:0:1 - - [21/Jun/2018:14:51:17 +0800] "GET /controller/addStudent.action HTTP/1.1" 500 20012 http-bio-8882-exec-2 125
+0:0:0:0:0:0:0:1 - - [21/Jun/2018:14:52:07 +0800] "GET /controller/addStudent.action HTTP/1.1" 200 7 http-bio-8882-exec-3 9
+0:0:0:0:0:0:0:1 - - [21/Jun/2018:14:56:58 +0800] "GET /controller/queryStudentByNo.action HTTP/1.1" 200 290 http-bio-8882-exec-1 19407
