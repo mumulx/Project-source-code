@@ -1,0 +1,747 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="012236f0-6076-4b27-bfad-a86c5a168729" name="Default Changelist" comment="" />
+    <ignored path="$PROJECT_DIR$/out/" />
+    <ignored path="$PROJECT_DIR$/target/" />
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="DefaultGradleProjectSettings">
+    <option name="isMigrated" value="true" />
+  </component>
+  <component name="FileEditorManager">
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Interface" />
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="FindInProjectRecents">
+    <findStrings>
+      <find>UNIXToolkit</find>
+    </findStrings>
+  </component>
+  <component name="IdeDocumentHistory">
+    <option name="CHANGED_PATHS">
+      <list>
+        <option value="$PROJECT_DIR$/src/com/mumulx/test/hashMap/HashMap.java" />
+        <option value="$PROJECT_DIR$/src/com/mumulx/test/hashMap/TestHashMap.java" />
+        <option value="$PROJECT_DIR$/src/com/sun/java/swing/plaf/gtk/GTKLookAndFeel.java" />
+        <option value="$PROJECT_DIR$/src/com/mumulx/sources/com/sun/java/swing/plaf/gtk/GTKEngine.java" />
+        <option value="$PROJECT_DIR$/src/com/mumulx/sources/com/sun/corba/se/impl/activation/NameServiceStartThread.java" />
+        <option value="$PROJECT_DIR$/src/test/hashmap/TestHashMap.java" />
+        <option value="$PROJECT_DIR$/src/source/com/sun/awt/UNIXToolkit.java" />
+        <option value="$PROJECT_DIR$/src/source/com/sun/font/FontConfigManager.java" />
+        <option value="$PROJECT_DIR$/src/source/java/util/HashMap.java" />
+        <option value="$PROJECT_DIR$/src/test/onJava8/Chapter13.java" />
+        <option value="$PROJECT_DIR$/src/test/onJava8/chapter14/Bubble.java" />
+        <option value="$PROJECT_DIR$/src/test/onJava8/chapter14/chapter14.java" />
+        <option value="$PROJECT_DIR$/OnJava8/src/onJava8/chapter14/chapter14.java" />
+        <option value="$PROJECT_DIR$/OnJava8/src/onJava8/chapter17/test17.java" />
+        <option value="$PROJECT_DIR$/JavaStudy/src/com/mumulx/string/testString.java" />
+        <option value="$PROJECT_DIR$/JavaStudy/src/com/mumulx/lambda/Demo01.java" />
+        <option value="$PROJECT_DIR$/JavaStudy/src/com/mumulx/lambda/MyInterface.java" />
+        <option value="$PROJECT_DIR$/JavaStudy/src/com/mumulx/lambda/Demo02.java" />
+        <option value="$PROJECT_DIR$/JavaStudy/src/com/mumulx/col/BZL.java" />
+        <option value="$PROJECT_DIR$/JavaStudy/src/com/mumulx/ex/Demo01.java" />
+        <option value="$PROJECT_DIR$/JavaStudy/src/com/mumulx/annotaion/Demo01.java" />
+        <option value="$PROJECT_DIR$/JavaStudy/src/com/mumulx/io/Demo1.java" />
+        <option value="$PROJECT_DIR$/JavaStudy/src/com/mumulx/io/InputStreamDemo.java" />
+        <option value="$PROJECT_DIR$/JavaStudy/src/com/mumulx/io/OutputStreamDemo.java" />
+        <option value="$PROJECT_DIR$/JavaStudy/src/com/mumulx/io/FileCopy.java" />
+        <option value="$PROJECT_DIR$/JavaStudy/src/com/mumulx/io/FileCopyCharactor.java" />
+        <option value="$PROJECT_DIR$/JavaStudy/src/com/mumulx/io/FileCopyCharactorBuffered.java" />
+        <option value="$PROJECT_DIR$/JavaStudy/src/com/mumulx/io/FileCopyData.java" />
+        <option value="$PROJECT_DIR$/JavaStudy/src/com/mumulx/io/decorator/Phone.java" />
+        <option value="$PROJECT_DIR$/JavaStudy/src/com/mumulx/io/decorator/ConcretePhone.java" />
+        <option value="$PROJECT_DIR$/JavaStudy/src/com/mumulx/io/decorator/SmartPhone.java" />
+        <option value="$PROJECT_DIR$/JavaStudy/src/com/mumulx/io/decorator/ConcreteSmarPhone1.java" />
+        <option value="$PROJECT_DIR$/JavaStudy/src/com/mumulx/io/decorator/ConcreteSmarPhone2.java" />
+        <option value="$PROJECT_DIR$/JavaStudy/src/com/mumulx/io/decorator/Test.java" />
+        <option value="$PROJECT_DIR$/JavaStudy/src/com/mumulx/socket/ServerSocket.java" />
+        <option value="$PROJECT_DIR$/JavaStudy/src/com/mumulx/socket/MyClient.java" />
+        <option value="$PROJECT_DIR$/JavaStudy/src/com/mumulx/socket/Student.java" />
+        <option value="$PROJECT_DIR$/JavaStudy/src/com/mumulx/socket/demo02/Student.java" />
+        <option value="$PROJECT_DIR$/JavaStudy/src/com/mumulx/socket/demo02/MyServer.java" />
+        <option value="$PROJECT_DIR$/JavaStudy/src/com/mumulx/socket/demo02/MyClient.java" />
+        <option value="$PROJECT_DIR$/JavaStudy/src/com/mumulx/socket/demo03/MyServer.java" />
+        <option value="$PROJECT_DIR$/JavaStudy/src/com/mumulx/socket/demo03/ServerThread.java" />
+        <option value="$PROJECT_DIR$/JavaStudy/src/com/mumulx/socket/demo03/MyClient.java" />
+        <option value="$PROJECT_DIR$/JavaStudy/src/com/mumulx/socket/udp.java" />
+        <option value="$PROJECT_DIR$/JavaStudy/src/com/mumulx/socket/udp/Receive.java" />
+        <option value="$PROJECT_DIR$/JavaStudy/src/com/mumulx/socket/udp/Send.java" />
+        <option value="$PROJECT_DIR$/JavaStudy/src/com/mumulx/socket/DemoUtil.java" />
+        <option value="$PROJECT_DIR$/JavaStudy/src/com/mumulx/socket/URLDemo.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/kuang/add/CountDownLatchDemo.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/kuang/unsafe/MapTest.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/kuang/callable/CallableTest.java" />
+      </list>
+    </option>
+  </component>
+  <component name="MavenImportPreferences">
+    <option name="generalSettings">
+      <MavenGeneralSettings>
+        <option name="userSettingsFile" value="C:\workplace\jar\maven\apache-maven-3.6.2\conf\settings.xml" />
+      </MavenGeneralSettings>
+    </option>
+    <option name="importingSettings">
+      <MavenImportingSettings>
+        <option name="importAutomatically" value="true" />
+      </MavenImportingSettings>
+    </option>
+  </component>
+  <component name="ProjectFrameBounds" extendedState="6">
+    <option name="x" value="162" />
+    <option name="y" value="367" />
+    <option name="width" value="1940" />
+    <option name="height" value="1100" />
+  </component>
+  <component name="ProjectView">
+    <navigator proportions="" version="1">
+      <foldersAlwaysOnTop value="true" />
+    </navigator>
+    <panes>
+      <pane id="Scope" />
+      <pane id="ProjectPane">
+        <subPane>
+          <expand>
+            <path>
+              <item name="JUCStudy" type="b2602c69:ProjectViewProjectNode" />
+              <item name="JUCStudy" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="JUCStudy" type="b2602c69:ProjectViewProjectNode" />
+              <item name="JUCStudy" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="JUCStudy" type="b2602c69:ProjectViewProjectNode" />
+              <item name="JUCStudy" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="JUCStudy" type="b2602c69:ProjectViewProjectNode" />
+              <item name="JUCStudy" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="JUCStudy" type="b2602c69:ProjectViewProjectNode" />
+              <item name="JUCStudy" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="com" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="JUCStudy" type="b2602c69:ProjectViewProjectNode" />
+              <item name="JUCStudy" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="com" type="462c0819:PsiDirectoryNode" />
+              <item name="kuang" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="JUCStudy" type="b2602c69:ProjectViewProjectNode" />
+              <item name="JUCStudy" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="com" type="462c0819:PsiDirectoryNode" />
+              <item name="kuang" type="462c0819:PsiDirectoryNode" />
+              <item name="add" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="JUCStudy" type="b2602c69:ProjectViewProjectNode" />
+              <item name="JUCStudy" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="com" type="462c0819:PsiDirectoryNode" />
+              <item name="kuang" type="462c0819:PsiDirectoryNode" />
+              <item name="callable" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="JUCStudy" type="b2602c69:ProjectViewProjectNode" />
+              <item name="JUCStudy" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="com" type="462c0819:PsiDirectoryNode" />
+              <item name="kuang" type="462c0819:PsiDirectoryNode" />
+              <item name="callable" type="462c0819:PsiDirectoryNode" />
+              <item name="CallableTest.java" type="529ef68f:ClassesTreeStructureProvider$PsiClassOwnerTreeNode" />
+            </path>
+            <path>
+              <item name="JUCStudy" type="b2602c69:ProjectViewProjectNode" />
+              <item name="JUCStudy" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="com" type="462c0819:PsiDirectoryNode" />
+              <item name="kuang" type="462c0819:PsiDirectoryNode" />
+              <item name="single" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="JUCStudy" type="b2602c69:ProjectViewProjectNode" />
+              <item name="JUCStudy" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="com" type="462c0819:PsiDirectoryNode" />
+              <item name="kuang" type="462c0819:PsiDirectoryNode" />
+              <item name="single" type="462c0819:PsiDirectoryNode" />
+              <item name="EnumSingle.java" type="529ef68f:ClassesTreeStructureProvider$PsiClassOwnerTreeNode" />
+            </path>
+            <path>
+              <item name="JUCStudy" type="b2602c69:ProjectViewProjectNode" />
+              <item name="JUCStudy" type="462c0819:PsiDirectoryNode" />
+              <item name="target" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="JUCStudy" type="b2602c69:ProjectViewProjectNode" />
+              <item name="JUCStudy" type="462c0819:PsiDirectoryNode" />
+              <item name="target" type="462c0819:PsiDirectoryNode" />
+              <item name="classes" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="JUCStudy" type="b2602c69:ProjectViewProjectNode" />
+              <item name="JUCStudy" type="462c0819:PsiDirectoryNode" />
+              <item name="target" type="462c0819:PsiDirectoryNode" />
+              <item name="classes" type="462c0819:PsiDirectoryNode" />
+              <item name="com" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="JUCStudy" type="b2602c69:ProjectViewProjectNode" />
+              <item name="JUCStudy" type="462c0819:PsiDirectoryNode" />
+              <item name="target" type="462c0819:PsiDirectoryNode" />
+              <item name="classes" type="462c0819:PsiDirectoryNode" />
+              <item name="com" type="462c0819:PsiDirectoryNode" />
+              <item name="kuang" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="JUCStudy" type="b2602c69:ProjectViewProjectNode" />
+              <item name="JUCStudy" type="462c0819:PsiDirectoryNode" />
+              <item name="target" type="462c0819:PsiDirectoryNode" />
+              <item name="classes" type="462c0819:PsiDirectoryNode" />
+              <item name="com" type="462c0819:PsiDirectoryNode" />
+              <item name="kuang" type="462c0819:PsiDirectoryNode" />
+              <item name="single" type="462c0819:PsiDirectoryNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
+      <pane id="PackagesPane" />
+    </panes>
+  </component>
+  <component name="PropertiesComponent">
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="aspect.path.notification.shown" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
+    <property name="nodejs_npm_path_reset_for_default_project" value="true" />
+    <property name="project.structure.last.edited" value="Project" />
+    <property name="project.structure.proportion" value="0.15" />
+    <property name="project.structure.side.proportion" value="0.2" />
+    <property name="settings.editor.selected.configurable" value="MavenSettings" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\workplace\IDEA\MyStudyPro\JDKJavaSources\JavaStudy\src\com\mumulx" />
+      <recent name="C:\workplace\IDEA\MyStudyPro\JDKJavaSources\OnJava8\src" />
+      <recent name="C:\workplace\IDEA\MyStudyPro\JDKJavaSources\src" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\workplace\IDEA\MyStudyPro\JDKJavaSources\src\lib" />
+    </key>
+  </component>
+  <component name="RestServicesNavigator">
+    <treeState>
+      <expand />
+      <select />
+    </treeState>
+  </component>
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
+  </component>
+  <component name="RunManager" selected="Application.Test">
+    <configuration name="Chapter13" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="test.onJava8.Chapter13" />
+      <module name="JDKJavaSources" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="test.onJava8.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Test" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.kuang.single.Test" />
+      <module name="JUCStudy" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.kuang.single.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="TestHashMap (1)" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="test.hashmap.TestHashMap" />
+      <module name="JDKJavaSources" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="test.hashmap.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="TestHashMap" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.mumulx.test.hashMap.TestHashMap" />
+      <module name="JDKJavaSources" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.mumulx.test.hashMap.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="testString" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.mumulx.string.testString" />
+      <module name="JavaStudy" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.mumulx.string.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.Test" />
+        <item itemvalue="Application.testString" />
+        <item itemvalue="Application.Chapter13" />
+        <item itemvalue="Application.TestHashMap (1)" />
+        <item itemvalue="Application.TestHashMap" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="012236f0-6076-4b27-bfad-a86c5a168729" name="Default Changelist" comment="" />
+      <created>1585141216006</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1585141216006</updated>
+      <workItem from="1585141217133" duration="4197000" />
+      <workItem from="1585530366675" duration="304000" />
+      <workItem from="1585639467519" duration="3033000" />
+      <workItem from="1585647285020" duration="1197000" />
+      <workItem from="1585705473275" duration="2845000" />
+      <workItem from="1586050736335" duration="1471000" />
+      <workItem from="1586057017605" duration="6608000" />
+      <workItem from="1586076816178" duration="7527000" />
+      <workItem from="1586139722530" duration="7635000" />
+      <workItem from="1586312351730" duration="8125000" />
+      <workItem from="1586510881506" duration="163000" />
+      <workItem from="1586511195381" duration="86000" />
+      <workItem from="1587777388521" duration="702000" />
+      <workItem from="1589289303633" duration="881000" />
+      <workItem from="1589292832096" duration="653000" />
+      <workItem from="1589464850232" duration="218000" />
+      <workItem from="1589465088466" duration="7000" />
+      <workItem from="1589526680131" duration="29000" />
+      <workItem from="1589530065591" duration="983000" />
+      <workItem from="1589543724087" duration="2197000" />
+      <workItem from="1589638346827" duration="2095000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TimeTrackingManager">
+    <option name="totallyTimeSpent" value="50956000" />
+  </component>
+  <component name="TodoView">
+    <todo-panel id="selected-file">
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
+    <todo-panel id="all">
+      <are-packages-shown value="true" />
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
+  </component>
+  <component name="ToolWindowManager">
+    <frame x="-7" y="-7" width="1550" height="878" extended-state="6" />
+    <layout>
+      <window_info id="UI Designer" order="0" />
+      <window_info id="Favorites" order="1" side_tool="true" />
+      <window_info id="Designer" order="2" />
+      <window_info id="Structure" order="3" side_tool="true" weight="0.25" />
+      <window_info content_ui="combo" id="Project" order="4" visible="true" weight="0.24597855" />
+      <window_info anchor="bottom" id="JProfiler" />
+      <window_info anchor="bottom" id="Docker" order="0" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Event Log" order="1" side_tool="true" weight="0.32963988" />
+      <window_info anchor="bottom" id="Statistic" order="2" weight="0.32963988" />
+      <window_info anchor="bottom" id="Database Changes" order="3" />
+      <window_info anchor="bottom" id="Tail" order="4" />
+      <window_info anchor="bottom" id="Version Control" order="5" />
+      <window_info anchor="bottom" id="Messages" order="6" weight="0.32963988" />
+      <window_info anchor="bottom" id="MyBatis Log" order="7" />
+      <window_info anchor="bottom" id="Terminal" order="8" weight="0.32963988" />
+      <window_info anchor="bottom" id="Message" order="9" />
+      <window_info anchor="bottom" id="Find" order="10" />
+      <window_info anchor="bottom" id="Run" order="11" weight="0.32548475" />
+      <window_info anchor="bottom" id="Debug" order="12" weight="0.39889196" />
+      <window_info anchor="bottom" id="Cvs" order="13" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="14" weight="0.4" />
+      <window_info anchor="bottom" id="TODO" order="15" weight="0.32963988" />
+      <window_info anchor="right" id="Palette" order="0" />
+      <window_info anchor="right" id="RestServices" order="1" weight="0.3297587" />
+      <window_info anchor="right" id="Word Book" order="2" side_tool="true" />
+      <window_info anchor="right" id="Database" order="3" />
+      <window_info anchor="right" id="Palette&#9;" order="4" />
+      <window_info anchor="right" id="Maven" order="5" />
+      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="6" type="SLIDING" weight="0.4" />
+      <window_info anchor="right" id="Ant Build" order="7" weight="0.25" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="8" weight="0.25" />
+    </layout>
+    <layout-to-restore>
+      <window_info id="UI Designer" order="0" />
+      <window_info id="Favorites" order="1" side_tool="true" />
+      <window_info id="Designer" order="2" />
+      <window_info id="Structure" order="3" side_tool="true" weight="0.25" />
+      <window_info active="true" content_ui="combo" id="Project" order="4" visible="true" weight="0.24597855" />
+      <window_info anchor="bottom" id="Docker" order="0" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Event Log" order="1" side_tool="true" weight="0.32963988" />
+      <window_info anchor="bottom" id="Statistic" order="2" weight="0.32963988" />
+      <window_info anchor="bottom" id="Database Changes" order="3" />
+      <window_info anchor="bottom" id="Tail" order="4" />
+      <window_info anchor="bottom" id="Version Control" order="5" />
+      <window_info anchor="bottom" id="Messages" order="6" weight="0.32963988" />
+      <window_info anchor="bottom" id="MyBatis Log" order="7" />
+      <window_info anchor="bottom" id="Terminal" order="8" weight="0.32963988" />
+      <window_info anchor="bottom" id="Message" order="9" />
+      <window_info anchor="bottom" id="Find" order="10" />
+      <window_info anchor="bottom" id="Run" order="11" weight="0.24033149" />
+      <window_info anchor="bottom" id="Debug" order="12" weight="0.39889196" />
+      <window_info anchor="bottom" id="Cvs" order="13" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="14" weight="0.4" />
+      <window_info anchor="bottom" id="TODO" order="15" weight="0.32963988" />
+      <window_info anchor="right" id="Palette" order="0" />
+      <window_info anchor="right" id="RestServices" order="1" weight="0.3297587" />
+      <window_info anchor="right" id="Word Book" order="2" side_tool="true" />
+      <window_info anchor="right" id="Database" order="3" />
+      <window_info anchor="right" id="Palette&#9;" order="4" />
+      <window_info anchor="right" id="Maven" order="5" />
+      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="6" type="SLIDING" weight="0.4" />
+      <window_info anchor="right" id="Ant Build" order="7" weight="0.25" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="8" weight="0.25" />
+    </layout-to-restore>
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/com/mumulx/test/hashMap/TestHashMap.java</url>
+          <line>8</line>
+          <properties />
+          <option name="timeStamp" value="2" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/test/hashmap/TestHashMap.java</url>
+          <line>7</line>
+          <properties />
+          <option name="timeStamp" value="4" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
+  </component>
+  <component name="antWorkspaceConfiguration">
+    <option name="IS_AUTOSCROLL_TO_SOURCE" value="false" />
+    <option name="FILTER_TARGETS" value="false" />
+  </component>
+  <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/JavaStudy/src/com/mumulx/col/Demo01.java" />
+    <entry file="file://$PROJECT_DIR$/JavaStudy/src/com/mumulx/annotaion/MyAnnotation.java" />
+    <entry file="file://$PROJECT_DIR$/JavaStudy/src/com/mumulx/annotaion/TestMyAnnotation.java" />
+    <entry file="file://$PROJECT_DIR$/JavaStudy/src/com/mumulx/string/testString.java" />
+    <entry file="file://$PROJECT_DIR$/JavaStudy/src/com/mumulx/io/Demo1.java" />
+    <entry file="file://$PROJECT_DIR$/JavaStudy/src/com/mumulx/io/InputStreamDemo.java" />
+    <entry file="file://$PROJECT_DIR$/JavaStudy/src/com/mumulx/io/OutputStreamDemo.java" />
+    <entry file="file://$PROJECT_DIR$/JavaStudy/src/com/mumulx/io/FileCopy.java" />
+    <entry file="file://$PROJECT_DIR$/src/source/java/io/Writer.java" />
+    <entry file="file://$PROJECT_DIR$/src/source/java/io/FileWriter.java" />
+    <entry file="file://$PROJECT_DIR$/src/source/java/io/Reader.java" />
+    <entry file="file://$PROJECT_DIR$/JavaStudy/src/com/mumulx/io/FileCopyCharactor.java" />
+    <entry file="file://$PROJECT_DIR$/JavaStudy/src/com/mumulx/io/FileCopyCharactorBuffered.java" />
+    <entry file="file://$PROJECT_DIR$/JavaStudy/src/com/mumulx/io/FileCopyData.java" />
+    <entry file="file://$PROJECT_DIR$/JavaStudy/src/com/mumulx/io/decorator/Phone.java" />
+    <entry file="file://$PROJECT_DIR$/JavaStudy/src/com/mumulx/io/decorator/ConcretePhone.java" />
+    <entry file="file://$PROJECT_DIR$/JavaStudy/src/com/mumulx/io/decorator/SmartPhone.java" />
+    <entry file="file://$PROJECT_DIR$/JavaStudy/src/com/mumulx/io/decorator/ConcreteSmarPhone1.java" />
+    <entry file="file://$PROJECT_DIR$/JavaStudy/src/com/mumulx/io/decorator/ConcreteSmarPhone2.java" />
+    <entry file="file://$PROJECT_DIR$/JavaStudy/src/com/mumulx/io/decorator/Test.java" />
+    <entry file="file://$PROJECT_DIR$/JavaStudy/src/com/mumulx/socket/MyServer.java" />
+    <entry file="file://$PROJECT_DIR$/JavaStudy/src/com/mumulx/socket/MyClient.java" />
+    <entry file="file://$PROJECT_DIR$/JavaStudy/src/com/mumulx/socket/udp.java" />
+    <entry file="file://$PROJECT_DIR$/JavaStudy/src/com/mumulx/socket/demo02/Student.java" />
+    <entry file="file://$PROJECT_DIR$/JavaStudy/src/com/mumulx/socket/demo02/MyServer.java" />
+    <entry file="file://$PROJECT_DIR$/JavaStudy/src/com/mumulx/socket/demo02/MyClient.java" />
+    <entry file="file://$PROJECT_DIR$/JavaStudy/src/com/mumulx/socket/demo03/ServerThread.java" />
+    <entry file="file://$PROJECT_DIR$/JavaStudy/src/com/mumulx/socket/demo03/MyClient.java" />
+    <entry file="file://$PROJECT_DIR$/JavaStudy/src/com/mumulx/socket/udp/Receive.java" />
+    <entry file="file://$PROJECT_DIR$/JavaStudy/src/com/mumulx/socket/udp/Send.java" />
+    <entry file="file://$PROJECT_DIR$/JavaStudy/src/com/mumulx/socket/DemoUtil.java" />
+    <entry file="file://$PROJECT_DIR$/JavaStudy/src/com/mumulx/socket/URLDemo.java" />
+    <entry file="file://$PROJECT_DIR$/src/source/java/util/concurrent/TimeUnit.java" />
+    <entry file="file://$PROJECT_DIR$/src/source/java/io/File.java" />
+    <entry file="file://$PROJECT_DIR$/src/source/java/io/StringReader.java" />
+    <entry file="file://$PROJECT_DIR$/src/source/java/io/StringWriter.java" />
+    <entry file="file://$PROJECT_DIR$/JavaStudy/src/com/mumulx/socket/demo03/MyServer.java" />
+    <entry file="file://$PROJECT_DIR$/src/source/java/io/ObjectInput.java" />
+    <entry file="file://$PROJECT_DIR$/../JDKJavaSources/src/source/java/util/concurrent/ConcurrentHashMap.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="56">
+          <caret line="822" column="11" selection-start-line="822" selection-start-column="11" selection-end-line="822" selection-end-column="11" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../JDKJavaSources/src/source/java/util/Map.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="56">
+          <caret line="128" column="17" selection-start-line="128" selection-start-column="17" selection-end-line="128" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/kuang/add/CountDownLatchDemo.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="396">
+          <caret line="19" selection-start-line="19" selection-end-line="19" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/kuang/unsafe/MapTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="264">
+          <caret line="16" selection-start-line="16" selection-end-line="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../JDKJavaSources/src/source/java/util/HashMap.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="9636">
+          <caret line="473" column="3" selection-start-line="473" selection-start-column="3" selection-end-line="475" selection-end-column="5" />
+          <folding>
+            <element signature="e#19296#19297#0" expanded="true" />
+            <element signature="e#19379#19380#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/kuang/callable/CallableTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="198">
+          <caret line="28" column="1" selection-start-line="28" selection-start-column="1" selection-end-line="28" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/kuang/single/Holder.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="66">
+          <caret line="3" column="13" selection-start-line="3" selection-start-column="13" selection-end-line="3" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/kuang/single/Hungry.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="66">
+          <caret line="3" column="13" selection-start-line="3" selection-start-column="13" selection-end-line="3" selection-end-column="13" />
+          <folding>
+            <element signature="e#391#392#0" expanded="true" />
+            <element signature="e#420#421#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/kuang/single/LazyMan.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="286">
+          <caret line="50" column="53" selection-start-line="50" selection-start-column="53" selection-end-line="50" selection-end-column="53" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../JDKJavaSources/src/source/java/lang/reflect/Constructor.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="334">
+          <caret line="417" column="25" selection-start-line="417" selection-start-column="25" selection-end-line="417" selection-end-column="25" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/target/classes/com/kuang/single/EnumSingle.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="396">
+          <caret line="21" column="39" lean-forward="true" selection-start-line="21" selection-start-column="16" selection-end-line="21" selection-end-column="39" />
+          <folding>
+            <element signature="e#0#890#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/target/classes/com/kuang/single/EnumSingle.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="330">
+          <caret line="17" lean-forward="true" selection-start-line="17" selection-end-line="17" />
+          <folding>
+            <element signature="e#0#278#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/kuang/single/EnumSingle.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="226">
+          <caret line="18" column="24" lean-forward="true" selection-start-line="18" selection-start-column="24" selection-end-line="18" selection-end-column="24" />
+        </state>
+      </provider>
+    </entry>
+  </component>
+  <component name="masterDetails">
+    <states>
+      <state key="ArquillianSettingsConfigurable.UI">
+        <settings>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="ArtifactsStructureConfigurable.UI">
+        <settings>
+          <artifact-editor />
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="FacetStructureConfigurable.UI">
+        <settings>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="GlobalLibrariesConfigurable.UI">
+        <settings>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="JdkListConfigurable.UI">
+        <settings>
+          <last-edited>1.8</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="ModuleStructureConfigurable.UI">
+        <settings>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="ProjectJDKs.UI">
+        <settings>
+          <last-edited>1.8</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="ProjectLibrariesConfigurable.UI">
+        <settings>
+          <last-edited>tools</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+    </states>
+  </component>
+</project>
